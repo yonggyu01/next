@@ -1,0 +1,42 @@
+@import './mixin.scss';
+.sidewrap{
+      //   width: 100vw;
+        @include relative;
+        height: calc(100vh - 58px);
+        background-color: rgba(0, 0, 0, 0.247);
+        transform: translate(-500px, 0);
+        transition: all 0.5s cubic-bezier(0.075, 0.82, 0.565, 1);
+        box-shadow: 1px 40px 30px -10px;
+     @include flex(row);
+     .left{
+        width: 350px;
+        max-width : 100vw;
+        background-color:white;
+        padding-left: 20px;
+        padding-top: 20px;
+        @include flex(column){
+         gap : 15px
+        }
+        
+     }
+    .right{
+        width: 100%;
+        display: none;
+    }
+    
+    }
+
+.openmenu{
+   transform: translate(0, 0);
+}
+.xbtn{
+   position: absolute;
+   @include boxcenter;
+   top : 5px;
+   left : 360px;
+   font-size: 1em;
+   color : rgb(44, 43, 43);
+   border: 1px dashed rgb(14, 14, 14);
+   width: 20px;
+   height: 20px;
+}

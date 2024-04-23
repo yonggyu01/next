@@ -1,0 +1,16 @@
+@mixin flex($direction){
+    display: flex;
+    flex-direction: $direction;
+    @content
+};
+@mixin relative{
+position: relative;
+};
+@mixin absolute{
+position: absolute;
+};
+@mixin boxcenter{
+display :flex;
+align-items: center;
+justify-content: center;
+}

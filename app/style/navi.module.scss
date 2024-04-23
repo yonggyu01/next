@@ -1,0 +1,80 @@
+@import './mixin.scss';
+@import './media.scss';
+
+.ulflex{
+   @include flex(row){
+     gap : 10px;
+     width : 80vw;
+     margin: 0 auto;
+     align-items: center;
+     justify-content: end;
+    //  border-bottom: 2px solid rgba(0, 0, 0, 0.596);
+   }
+    // box-shadow: black 0px 0px 2px 0px;
+    li{
+       
+      a{
+        display: flex;
+        align-items: center;
+        padding: 15px;
+      }
+    }
+   
+}
+.bugerbtn{
+  display: none;
+}
+.bugertitle{
+  display: none;
+}
+@include tablet {
+  .navig{
+    @include flex(row){
+      gap: 20px;
+    }
+  }
+   .ulflex{
+    height: 54px;
+      display: none;
+  
+   }
+   .bugerbtn{
+    cursor: pointer;
+    @include flex(column){
+      gap:5px;
+      align-items: center;
+      justify-content: center;
+    }
+      padding-left: 15px; 
+        span{
+      display: block;
+      width: 15px;
+      height: 2px;
+      border-bottom: 2px solid black;
+      
+    
+    }
+   }   
+   .bugertitle{
+
+    @include flex(row){
+      justify-content: center;
+      align-items: center;
+    }
+    font-size: 2em;
+    height: 54px;
+    width: 100%;
+    margin: 0 auto;
+   }
+}
+.sidebar{
+  @include absolute;
+  z-index: 3;
+}
+
+@include mobile {
+  .bugertitle{
+    font-size: 1em;
+  }
+  
+}
