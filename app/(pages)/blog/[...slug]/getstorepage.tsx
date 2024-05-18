@@ -5,11 +5,11 @@ import {useAppSelector} from '@/app/store/hook'
 import { slugprops } from './page'
 import detail from './blogdetail.module.scss'
 interface ownprops{
-data : Steemitdata[]
 params : slugprops
+children? : React.ReactNode
 }
 
-const Getstorepage:React.FC<ownprops> = ({data,params})=>{
+const Getstorepage:React.FC<ownprops> = ({params,children})=>{
     const list = useAppSelector((state)=>state.persistedReducer.mystore.blogdata)
     const [ pagename ,  inumber] = params
     const makelist =(pname:string):Steemitdata[]=>{
