@@ -10,7 +10,7 @@ export default function Blogdetail ({ params }: { params: { slug: slugprops } })
     // console.log(params.slug, data , 'data')
     return (
         <div>
-            <Getstorepage params={params.slug}> </Getstorepage>
+            <Getstorepage params={params.slug}></Getstorepage>
         </div>
     )
 }

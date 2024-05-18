@@ -9,7 +9,7 @@ params : slugprops
 children? : React.ReactNode
 }
 
-const Getstorepage:React.FC<ownprops> = ({params,children})=>{
+const Getstorepage:React.FC<ownprops> = ({params})=>{
     const list = useAppSelector((state)=>state.persistedReducer.mystore.blogdata)
     const [ pagename ,  inumber] = params
     const makelist =(pname:string):Steemitdata[]=>{
