@@ -3,7 +3,7 @@ import React from 'react'
 
 import blog from './blog.module.scss'
 import { Bloglist } from "./bloglist";
-import {Steemitdata,SteemitResult} from "../../model"
+import {Steemitdata,SteemitResult} from "@/app/model"
 export const blogdata = async () => {
   let data = await fetch('https://api.steemit.com', {
    method: 'POST',
