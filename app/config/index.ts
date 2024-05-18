@@ -18,7 +18,7 @@ export const siteConfig:config = {
             href: "/interview"
         },
         {
-            label : "Blog",
+            label : "blog",
             href: "/blog"
         }
     

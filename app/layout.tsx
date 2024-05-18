@@ -2,7 +2,12 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Navi } from "./components/navi";
+import {Providers} from '@/app/store/provider'
+import { useStore } from "react-redux";
+import { PersistGate } from "redux-persist/integration/react";
+import {persistor} from '@/app/store/store'
 const inter = Inter({ subsets: ["latin"] });
+
 
 export const metadata: Metadata = {
   title: "Yonggyu's blog",
@@ -21,7 +26,9 @@ export default function RootLayout({
         <Navi></Navi>
       </header>
       <main>
-        {children}
+        <Providers>
+          {children}
+          </Providers>
       </main>
 
         </body>

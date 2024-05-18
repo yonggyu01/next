@@ -1,0 +1,97 @@
+.retitle{
+    font-size: 2em;
+}
+.reactflexbox{
+    display: flex;
+    gap:25px;
+    flex-wrap: nowrap;
+    max-width: 1500px;
+    overflow: hidden;
+    margin-bottom: 35px;
+}
+.reactwraparticle{
+    width: 350px;
+    border: 1px solid black;
+    // box-shadow: 1px 1px 1px 1px black;
+    padding: 3px;
+}
+.leftmargin{
+padding-left: 30px;
+box-sizing: border-box;
+margin-left: 15px;
+position: relative;
+}
+.listbtn{
+    z-index: 2;
+    position: absolute;
+    width:100%;
+    max-width: 1490px;
+    top : 180px;   
+    font-size: 4em;
+    font-weight: 100;
+    .listbtnLeft {
+        left : 10px;
+        position: absolute;
+        cursor: pointer;
+    }
+    .listbtnRight{
+        position: absolute;
+        right: 15px;
+        display: flex;
+        width: 1em;
+        height: 1em;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.781);
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;    
+    }
+    }    
+
+
+.reactblogimg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;  
+    object-fit: cover;
+    height: 250px;
+
+}
+.reacttitle{
+    font-size: 1.2em;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.timeline{
+    font-size: 0.9em;
+    color : gray
+}
+// 3줄만 보여줄것임
+.reactcontents{
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 0.9em;
+    padding-right:  5px;
+    box-sizing: border-box;
+
+    /* 여러 줄 자르기 추가 스타일 */
+    white-space: normal;
+    line-height: 1.2;
+    height: 3.6em;
+    text-align: left;
+    word-wrap: break-word;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+.reactwrapa{
+    &:hover .reactwraparticle{
+        border: 1px solid red;
+    }
+}

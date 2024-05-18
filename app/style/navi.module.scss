@@ -69,7 +69,6 @@
 }
 .sidebar{
   @include absolute;
-  z-index: 3;
 }
 
 @include mobile {

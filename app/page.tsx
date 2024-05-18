@@ -1,9 +1,12 @@
 import Image from "next/image";
 import { Profile } from "./components/mainpage/profile/profile";
-export default function Home() {
+// import wrapper from './store/store'
+ function Home() {
   return (
     <main className="">
       <Profile></Profile>
     </main>
   );
 }
+
+export default Home
