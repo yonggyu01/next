@@ -1,14 +1,18 @@
 "use client"
-import React from 'react'
+import React, { useEffect } from 'react'
 import {Steemitdata,SteemitResult, body} from "../../model"
 import reactblog from './blog.module.scss'
+import { useAppDispatch,useAppSelector } from '../../store/hook';
+import {Mystore} from "@/app/store/module/mystore";
 interface Ownprops {
     data : Steemitdata[]
     title : string
     check : string
 }
 export const Reactpage :React.FC<Ownprops> = ({data,title,check}) => {
+    console.log(data, '프롭스로 전달받은 데이터')
     const [render, setrender] = React.useState<boolean>(false)
+    const dispatch = useAppDispatch()
     React.useEffect(()=>{
       if(moveli.current.length > 3 ){
         setrender(true)
@@ -30,6 +34,27 @@ export const Reactpage :React.FC<Ownprops> = ({data,title,check}) => {
          behavior: "smooth", block: "nearest", inline: "start" 
         })
     }
+    function pushdisp(txt:string) :void {
+      switch(txt){
+        case 'react' : 
+        dispatch(Mystore.actions.addreact(data))
+        return;
+        case 'skill' :
+        dispatch(Mystore.actions.addskill(data))
+        return;
+        case 'cs':
+        dispatch(Mystore.actions.addcs(data))
+        return;
+        case 'next':
+        dispatch(Mystore.actions.addnext(data))
+        return;
+        case 'vue' : 
+        dispatch(Mystore.actions.addvue(data))
+        return;
+      }
+    }  
+   
+   
     // console.log(typeof moveli.current.length, `${title} title`)
     return (
         <div className={reactblog.leftmargin}>
@@ -51,6 +76,7 @@ export const Reactpage :React.FC<Ownprops> = ({data,title,check}) => {
                             setrender(true)
                         }}} 
                         onClick={()=>{  
+                          pushdisp(check)
                    }} className={reactblog.reactwrapa} href={`/blog/${check}/${idx}`}>
                    <article className={reactblog.reactwraparticle}>
       <img

@@ -31,36 +31,36 @@ export const Bloglist :React.FC<ownprops> = ({data}) => {
                     if(!prevState.includes(item)){return prevState = [...prevState, item]}
                   return prevState}
                   )
-                  dispatch(Mystore.actions.addreact(item))
+                  // dispatch(Mystore.actions.addreact(item))
                   // setreact([...myreact, item])
                   // console.log(myreact, '일치',item)
                 }else if(x === 'yongvue'){
                   setvue(prevState => {
                     if(!prevState.includes(item)){return prevState = [...prevState, item]}
                   return prevState})
-                    dispatch(Mystore.actions.addvue(item))
+                    // dispatch(Mystore.actions.addvue(item))
                 }else if(x === 'yongetc'){
                   //  setetc([...myetc,item])
                   setetc(prevState => {
                     if(!prevState.includes(item)){return prevState = [...prevState, item]}
                   return prevState})
-                  dispatch(Mystore.actions.addetc(item))
+                  // dispatch(Mystore.actions.addetc(item))
                 }else if( x=== 'yongnext'){
                   setnext(prevState => {
                     if(!prevState.includes(item)){return prevState = [...prevState, item]}
                   return prevState})
-                  dispatch(Mystore.actions.addnext(item))
+                  // dispatch(Mystore.actions.addnext(item))
                   }else if( x=== 'yongcs'){
                     setcs(prevState => {
                       if(!prevState.includes(item)){return prevState = [...prevState, item]}
                     return prevState})
-                    dispatch(Mystore.actions.addcs(item))
+                    // dispatch(Mystore.actions.addcs(item))
                     // console.log(mycs, 'cs 일치',item)
                    }else if( x=== 'yongskill'){
                     setskill(prevState => {
                       if(!prevState.includes(item)){return prevState = [...prevState, item]}
                     return prevState})
-                    dispatch(Mystore.actions.addskill(item))
+                    // dispatch(Mystore.actions.addskill(item))
                     // console.log(mycs, 'cs 일치',item)
                    }
               }

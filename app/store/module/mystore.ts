@@ -2,46 +2,36 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import {Steemitdata,SteemitResult, body} from "../../model"
 export const initialState = {
     blogdata : {
-        react : Array<Steemitdata>(),
-        vue :  Array<Steemitdata>(),
-        skill :  Array<Steemitdata>(),
-        cs :  Array<Steemitdata>(),
-        next :  Array<Steemitdata>(),
-        etc :  Array<Steemitdata>()
+        react : [] as Steemitdata[],
+        vue :  [] as Steemitdata[],
+        skill :  [] as Steemitdata[],
+        cs :  [] as Steemitdata[],
+        next :  [] as Steemitdata[],
+        etc :  [] as Steemitdata[]
     }
 }
 export const Mystore = createSlice({
   name: "Mystore",
   initialState,
   reducers: {
-    addreact:(state,action:PayloadAction<Steemitdata>)=>{
-        if(!state.blogdata.react.includes(action.payload)){
-            state.blogdata.react.push(action.payload)
-        }},
-    addskill:(state,action:PayloadAction<Steemitdata>)=>{
-        if(!state.blogdata.skill.includes(action.payload)){
-            state.blogdata.skill.push(action.payload)
-        }
+    addreact:(state,action:PayloadAction<Steemitdata[]>)=>{
+            state.blogdata.react= action.payload
     },
-    addcs:(state,action:PayloadAction<Steemitdata>)=>{
-        if(!state.blogdata.cs.includes(action.payload)){
-            state.blogdata.cs.push(action.payload)
-        }
+    addskill:(state,action:PayloadAction<Steemitdata[]>)=>{
+                  state.blogdata.skill =action.payload
+          },
+    addcs:(state,action:PayloadAction<Steemitdata[]>)=>{
+       
+        state.blogdata.cs =action.payload
     },    
-    addnext:(state,action:PayloadAction<Steemitdata>)=>{
-        if(!state.blogdata.next.includes(action.payload)){
-            state.blogdata.next.push(action.payload)
-        }
+    addnext:(state,action:PayloadAction<Steemitdata[]>)=>{
+        state.blogdata.next =action.payload
     },
-    addvue:(state,action:PayloadAction<Steemitdata>)=>{
-        if(!state.blogdata.vue.includes(action.payload)){
-            state.blogdata.vue.push(action.payload)
-        }
+    addvue:(state,action:PayloadAction<Steemitdata[]>)=>{
+        state.blogdata.vue =action.payload
     },
-    addetc:(state,action:PayloadAction<Steemitdata>)=>{
-        if(!state.blogdata.etc.includes(action.payload)){
-            state.blogdata.etc.push(action.payload)
-        }
+    addetc:(state,action:PayloadAction<Steemitdata[]>)=>{
+        state.blogdata.etc =action.payload
     },
     },
 });
