@@ -10,7 +10,6 @@ interface Ownprops {
     check : string
 }
 export const Reactpage :React.FC<Ownprops> = ({data,title,check}) => {
-    console.log(data, '프롭스로 전달받은 데이터')
     const [render, setrender] = React.useState<boolean>(false)
     const dispatch = useAppDispatch()
     React.useEffect(()=>{
@@ -24,16 +23,17 @@ export const Reactpage :React.FC<Ownprops> = ({data,title,check}) => {
     const imgsrc = /https.+[$jpg]/i
     const hangulno = /[^ ㄱ-ㅣ가-힣]/gm
     const moveli  = React.useRef<HTMLAnchorElement[]>([])  
-    let liindex :number = 0
+    let liindex= React.useRef<number>(0)
     function movingscroll(action: string){
-      if(action === 'left' && liindex < moveli.current.length-3 && liindex >0){
-        --liindex 
-      }else if(action === 'right' && liindex < moveli.current.length && liindex >=0 ){++liindex}
+      if(action === 'left' && liindex.current <= moveli.current.length-3 && liindex.current >0){
+        --liindex.current 
+      }else if(action === 'right' && liindex.current < moveli.current.length-3 && liindex.current >=0 ){++liindex.current}
       // console.log(liindex, 'idx',moveli.current[liindex])
-      moveli.current[moveli.current.length%(liindex*4)]?.scrollIntoView({
+      moveli.current[liindex.current]?.scrollIntoView({
          behavior: "smooth", block: "nearest", inline: "start" 
         })
     }
+
     function pushdisp(txt:string) :void {
       switch(txt){
         case 'react' : 
@@ -53,7 +53,7 @@ export const Reactpage :React.FC<Ownprops> = ({data,title,check}) => {
         return;
       }
     }  
-   
+
    
     // console.log(typeof moveli.current.length, `${title} title`)
     return (
