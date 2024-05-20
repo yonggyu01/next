@@ -10,7 +10,7 @@ export const blogdata = async ():Promise<SteemitResult> => {
      method: 'condenser_api.get_blog',
      params: ['yonggyu01', 0, 150],  
      id: '1',}),
-  // cache: 'no-store'
+  cache: 'no-store'
    })
    let result = await data.json()
    return result
