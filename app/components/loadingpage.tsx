@@ -6,7 +6,7 @@ export default function Loadingpage(){
     return (
         <div className={loadcss.wrap}>
             <div className={loadcss.box}>
-                <p>loading 중입니다.</p>
+                <img src="./103.gif"/>
             </div>
         </div>
     )

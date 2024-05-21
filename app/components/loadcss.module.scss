@@ -1,12 +1,13 @@
 .wrap{
     display: flex;
     margin-top: 50px;
+    height: 90vh;
     justify-content: center;
     align-items: center;
     .box{
         width: 90%;
         height: 360px;
-        border: 1px solid rgb(136, 136, 136);
+        // border: 1px solid rgb(136, 136, 136);
         display: flex;
         justify-content: center;
         align-items: center;
