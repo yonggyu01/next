@@ -1,5 +1,6 @@
 @import './mixin.scss';
 @import './media.scss';
+@import './main.module.scss';
 
 .ulflex{
    @include flex(row){
@@ -14,6 +15,7 @@
     li{
        
       a{
+        color: var(--color-text);
         display: flex;
         align-items: center;
         padding: 15px;

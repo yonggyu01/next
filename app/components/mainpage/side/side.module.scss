@@ -1,0 +1,47 @@
+@import '../../../style/mixin.scss';
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
+@import '../../../style/main.module.scss';
+
+
+.wrap{
+    height: calc(100vh - 32px);
+    width: 40px;
+    padding-top: 10px;
+    border-right: 1px solid gray;
+}
+.flexbox{
+    width: 100%;
+
+
+@include flex(column){
+    gap: 5px;
+}
+    li{
+        @include boxcenter;
+        margin-top: 5px;
+        span{font-size: 30px;
+        color : var( --color-text)
+
+        }
+    }
+}
+.relative{
+    position: relative;
+    &:hover .popup{
+        display: block;
+    }
+}
+.popup{
+    display: none;
+    
+    position: absolute;
+    left :47px;
+    background-color: var( --color-text);
+    border: 1px solid gray;
+    color:var(--color-background);
+    font-size: 1em !important;
+    white-space: nowrap;
+    width: 245px;
+    padding-left: 5px;
+
+}

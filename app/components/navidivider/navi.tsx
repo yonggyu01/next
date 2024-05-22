@@ -2,9 +2,9 @@
 
 import Link from 'next/link'
 import React from 'react'
-import { siteConfig } from '../config'
-import navi from '../style/navi.module.scss'
-import {Sidebar} from './sidemenu'
+import { siteConfig } from '../../config'
+import navi from '../../style/navi.module.scss'
+import {Sidebar} from '../sidemenu'
 export const Navi:React.FC=() => {
 const [openside, setopenside] = React.useState<boolean>(false)
     // 버거버튼 여기에 만들어야할듯

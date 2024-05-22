@@ -6,7 +6,7 @@ import {persistor} from '@/app/store/store'
 import Loadingpage from "../components/loadingpage";
 export function Providers({ children }: { children: React.ReactNode }) {
     //
-    console.log(persistor)
+    // console.log(persistor)
   return <Provider store={cstore}>
     <PersistGate loading={<Loadingpage/>} persistor={persistor}>
           {children}

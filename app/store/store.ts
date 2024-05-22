@@ -1,6 +1,6 @@
 import { configureStore, ThunkAction  } from "@reduxjs/toolkit";
 import Mystore  from "./module/mystore";
-
+import Themestore from "./module/themestore";
 import {combineReducers } from "redux";
 import storage from 'redux-persist/lib/storage'
 import { persistReducer } from "redux-persist";
@@ -29,12 +29,13 @@ export default wrapper;
 // export const wrapper = createWrapper<Appstore>(makeStore);
 */
 const rootreducer = combineReducers({
-  mystore : Mystore
+  mystore : Mystore,
+  themestore: Themestore
 })
 const persistConfig = {
   key:'root' as string,
   storage  ,
-  whiteList : ["mystore"]
+  whiteList : ["mystore","themestore"]
 }
 const persistedReducer = persistReducer(persistConfig, rootreducer)
 export const cstore = configureStore({

@@ -27,3 +27,9 @@ export interface body {
     created: string
 }
 
+export type Imode =  "blog" | "vsc"
+
+export interface sidebarlist {
+    content : string,
+    title : string
+}

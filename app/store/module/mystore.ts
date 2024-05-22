@@ -1,5 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import {Steemitdata,SteemitResult, body} from "../../model"
+import {Steemitdata,SteemitResult} from "../../model"
+
+
 export const initialState = {
     blogdata : {
         react : [] as Steemitdata[],
@@ -10,6 +12,7 @@ export const initialState = {
         etc :  [] as Steemitdata[]
     }
 }
+
 export const Mystore = createSlice({
   name: "Mystore",
   initialState,
@@ -32,7 +35,7 @@ export const Mystore = createSlice({
     },
     addetc:(state,action:PayloadAction<Steemitdata[]>)=>{
         state.blogdata.etc =action.payload
-    },
+    }
     },
 });
 
