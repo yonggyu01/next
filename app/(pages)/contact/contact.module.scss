@@ -1,0 +1,64 @@
+@import '../../style/mixin.scss';
+@import '../../style/main.module.scss';
+.mainwrap { 
+    height: calc(100vh - 63px);
+    background-color:var(--color-mainbackground);
+   padding: 2em;
+   box-sizing: border-box;
+   counter-reset: line;
+}
+
+.countnum{
+    position: relative;
+    @include flex(row) {
+        align-items: center
+    }   ;
+    &::before{
+    color: grey;
+    text-align: center;
+    content: counter(line);
+    counter-increment: line;
+    margin-right: 1rem;
+    min-width: 26px;
+  
+    font-size: 1.5em;
+}
+}
+.flex{
+    @include flex(row){
+        gap : 10px
+    }
+}
+.ltgt{
+    color : gray;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+.tagname{
+    color :#9de6a4;
+    font-size: 1.5em;
+}
+.attrib{
+    color : #ae93ea;
+    font-size: 1.5em;
+}
+.attval{
+    color : #a3c6f4;
+    font-size: 1.5em;
+}
+.mleft{
+    margin-left: 2em;
+}
+.mleft1{
+    margin-left: 4em;}
+.text{
+    color :var(--color-text);
+    font-weight: 200;
+    font-size: 1.2em;
+}
+.mypic{
+    position: absolute;
+    left:350px;
+    top: -334px;
+    width: 200px !important;
+}

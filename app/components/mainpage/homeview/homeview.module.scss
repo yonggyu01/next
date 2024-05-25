@@ -1,0 +1,45 @@
+@import '../../../style/main.module.scss';
+@import '../../../style/mixin.scss';
+// .full{
+//     height: calc(100vh - 63px);
+// }
+.bgc{
+    width: calc(100%);
+    height: calc(100vh - 63px);
+    background-color:var(--color-mainbackground);
+    @include flex(column){
+        justify-content: center;
+        align-items: center;
+    }
+    h1{
+        
+        font-size: 3.5em;
+        margin-bottom: 15px;
+    }
+    h2{
+        font-size: 1em;
+        margin-bottom: 15px;
+    }
+    h1,h2,.btns{
+        color:var(--color-text)
+    }
+    .btns{
+
+        @include flex(row){
+            justify-content: space-between;
+            width: 360px;
+           
+        }
+        button{
+            border: 2px solid salmon;
+            padding: 0.5em;
+            &:hover{
+                background-color: salmon;
+            }
+        }
+    }
+}
+.img{
+    width: 380px;
+    opacity: 0.2;
+}

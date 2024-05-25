@@ -4,10 +4,14 @@
 
 
 .wrap{
-    height: calc(100vh - 32px);
-    width: 40px;
+    height: calc(100vh - 36px);
+    width: 50px;
     padding-top: 10px;
+    background-color: var(--color-background);
     border-right: 1px solid gray;
+    @include flex(row){
+        justify-content: center;
+    }
 }
 .flexbox{
     width: 100%;
@@ -19,29 +23,37 @@
     li{
         @include boxcenter;
         margin-top: 5px;
+        &:hover{
+            border-left : 2px solid red;
+            background-color: rgba(107, 107, 107, 0.349);
+        }
+        &:hover span {
+            color : var(--color-hovertextafter);
+        }
         span{font-size: 30px;
-        color : var( --color-text)
+        color : var( --color-hovertextbefore);
 
         }
     }
 }
 .relative{
     position: relative;
+
     &:hover .popup{
         display: block;
+        z-index: 3;
     }
 }
 .popup{
     display: none;
-    
     position: absolute;
-    left :47px;
+    left :50px;
     background-color: var( --color-text);
     border: 1px solid gray;
     color:var(--color-background);
     font-size: 1em !important;
     white-space: nowrap;
-    width: 245px;
+    width: 150px;
     padding-left: 5px;
 
 }

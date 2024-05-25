@@ -7,10 +7,11 @@
     }
 }
 .height{
-    height: 32px;
+    height: 36px;
+    background-color: var(--color-background);
 }
 .appicon{
-    width: 100%;
+    width: 32px;
     margin: 0px 0px 0 10px ;
     @include flex(row){
         justify-content: center;
@@ -19,12 +20,19 @@
     }
 }
 .topma{
-    // padding-top: 5px;
-    width: 100%;
-    @include boxcenter
+    &:not(:first-child):hover a{
+        background-color: rgba(138, 49, 49, 0.392);
+        border-radius: 5px;
+        box-sizing: border-box
+    }
+    @include boxcenter ;
+    
 }
 .linkcolor{
+    padding-left: 3px;
+    padding-right:3px;
     color:var(--color-text)
+    
 }
 .headerline{
     position: fixed;
@@ -36,18 +44,19 @@
     padding: 0 10px 0 0 ;
     border-bottom: 1px solid gray;
     .title{
-        border: 1px solid var(--color-background);
-        background-color: var(--color-background);
+        border: 1px solid var(--color-text);
+        background-color: rgba(185, 185, 185, 0.214);
+        padding:3px;
+        margin: 2px auto;
         border-radius: 10px;
-        width: 100%;
+        width: max(180px, 70%);
         height: 2em;
-        h1{font-size: 0.8em !important;}
+        h1{font-size: 0.8em !important;
+            color:var(--color-text)
+        }
         @include boxcenter
-
     }
     .titleright{
-        
-        // position: absolute;
         @include flex(row){
             margin-right: 20px;
             justify-content: end;
@@ -59,9 +68,8 @@
             font-size: 0.8em;
             height: 1.5em;
             @include boxcenter;
-            border:1px dashed black;
+            // border:1px dashed black;
+            color: var(--color-text)
         }
-        // right: 20px;
-
     }
 }

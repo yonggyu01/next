@@ -11,3 +11,28 @@
     margin: 0;
     list-style: none;
   }
+  body{
+    height:  100vh;
+    overflow: hidden;
+  }
+  body ::-webkit-scrollbar, html::-webkit-scrollbar{
+    width: 0px;
+  }
+  body::-webkit-scrollbar-thumb,html::-webkit-scrollbar-thumb{
+    background: rgba(220, 20, 60); /* 스크롤바 색상 */
+    border-radius: 0px; /* 스크롤바 둥근 테두리 */
+    width: 0px;
+}
+::-webkit-scrollbar-track:vertical {
+  border-radius: 0px;
+  width: 0px;
+}
+
+/* Horizontal Scrollbar (BOTTOM SIDE) */
+::-webkit-scrollbar-track:horizontal {
+  border-radius: 0px;
+  width: 0px;
+} 
+h1,h1,h3,h4,p,a,span{
+  font-family: Nanum Gothic;
+}

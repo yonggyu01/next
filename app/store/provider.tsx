@@ -3,7 +3,7 @@ import { Provider } from "react-redux";
 import { cstore  } from "./store";
 import { PersistGate } from "redux-persist/integration/react";
 import {persistor} from '@/app/store/store'
-import Loadingpage from "../components/loadingpage";
+import Loadingpage from "@/app/components/loadingpage";
 export function Providers({ children }: { children: React.ReactNode }) {
     //
     // console.log(persistor)

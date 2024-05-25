@@ -35,6 +35,8 @@ const rootreducer = combineReducers({
 const persistConfig = {
   key:'root' as string,
   storage  ,
+  serialize: true,
+  deserialize: true,
   whiteList : ["mystore","themestore"]
 }
 const persistedReducer = persistReducer(persistConfig, rootreducer)

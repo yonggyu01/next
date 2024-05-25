@@ -3,18 +3,30 @@ $btn-color-1: #FE016C;
 $btn-color-2: #FFBD07;
 $text-color-1: #232323;
 $text-color-2: #fff;
+$text-color-light1: rgb(68, 68, 68);
+$text-color-light2: black;
+$text-color-dark1 : rgb(165, 164, 164);
+$text-color-dark2 : rgb(255, 255, 255);
+
 $bg-color-1: #fff;
 $bg-color-2: #232323;
-
+$bg-main-color-1 :white ;
+$bg-main-color-2 :#24292e ;
 
 .body[data-theme="light"] {
     --color-text: #{$text-color-1};
+    --color-hovertextbefore: #{$text-color-light1};
+    --color-hovertextafter: #{$text-color-light2};
     --color-background: #{$bg-color-1};
+    --color-mainbackground: #{$bg-main-color-1};
     --color-btn : #{$btn-color-1};
   }
   
 .body[data-theme="dark"] {
   --color-text: #{$text-color-2};
+  --color-hovertextbefore: #{$text-color-dark1};
+  --color-hovertextafter: #{$text-color-dark2};
+  --color-mainbackground: #{$bg-main-color-2};
   --color-background: #{$bg-color-2};
   --color-btn : #{$btn-color-2};
 }

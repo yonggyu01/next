@@ -5,6 +5,9 @@ import "./globals.css";
 import  {Navidivider} from "./components/navidivider/divider";
 import {Providers} from '@/app/store/provider'
 import maincss from './style/main.module.scss'
+
+import Maindivider from "./components/mainpage/maindivider";
+import Themech from './themechecker'
 const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Yonggyu's blog",
@@ -23,14 +26,17 @@ export default function RootLayout({
       <header>
       <Providers>
       <Navidivider/>
+      <Themech/>
       </Providers>
       </header>
       <main>
         <Providers>
+          <Maindivider>
           {children}
+          </Maindivider>
           </Providers>
       </main>
-
+  
         </body>
     </html>
   );

@@ -31,5 +31,16 @@ export type Imode =  "blog" | "vsc"
 
 export interface sidebarlist {
     content : string,
-    title : string
+    title : string,
+    toggle? : boolean,
+    action?:(value:boolean) => void,
+    href:string
+   
 }
+export type colortheme = 'light' | 'dark'
+export interface filenames {
+        title: string;
+        src: React.JSX.Element;
+        href : string;
+    }
+
