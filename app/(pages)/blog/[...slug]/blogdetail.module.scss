@@ -12,10 +12,15 @@
             color: gray;
         }
         .detailgrid{
-            display: grid;
-            gap : 8px;
-            grid-template-columns: minmax(300px, 900px);;
-            justify-content: center;
+            .go{
+                height: 885px;
+                overflow-y: auto;
+            }
+            padding: 1.5em;
+            // display: grid;
+            // gap : 8px;
+            // grid-template-columns: minmax(300px, 900px);;
+            // justify-content: center;
             .detailtitle{
                 font-size: 2em;
                 font-weight: bold;

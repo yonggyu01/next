@@ -44,7 +44,7 @@ const Getstorepage:React.FC<ownprops> = ({params})=>{
               
       <div className={detail.detailwrap}>
         <div className={detail.detailgrid}>
-           <div className=''>
+           <div className={detail.go}>
             <h2 className={detail.detailtitle}>{datalist[inumber]?.comment.title.replace(/\(.*?\)/,'')}</h2>
              <p className={detail.detaildate}>작성일 : {datalist[inumber]?.comment.created.match(/\d{4}-\d{2}-\d{2}/)?.join('') } </p>
             {datalist[inumber]?.comment.body.split("\n").map((text,idx,arg)=>{    
