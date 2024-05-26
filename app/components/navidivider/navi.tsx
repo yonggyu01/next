@@ -4,10 +4,13 @@ import Link from 'next/link'
 import React from 'react'
 import { siteConfig } from '../../config'
 import navi from '../../style/navi.module.scss'
+import { useAppDispatch,useAppSelector } from '@/app/store/hook';
 import {Sidebar} from '../sidemenu'
+import { Themestore } from '@/app/store/module/themestore'
 export const Navi:React.FC=() => {
 const [openside, setopenside] = React.useState<boolean>(false)
     // 버거버튼 여기에 만들어야할듯
+    const dispatch = useAppDispatch()
     return (
         <>
         <nav className={navi.navig}>
@@ -22,7 +25,12 @@ const [openside, setopenside] = React.useState<boolean>(false)
             <ul className={navi.ulflex}>
                 {siteConfig.navItems.map(item=>(
                 <li key={item.label}>
-                    <Link href={item.href}>{item.label} </Link>
+                    <Link href={item.href} onClick={()=>{
+                        if(item.label === "Toggle_Theme"){
+                            console.log('테마변경')
+                            dispatch(Themestore.actions.changetheme('vsc'))
+                        }
+                    }}>{item.label} </Link>
                 </li> 
                 ))
                 }

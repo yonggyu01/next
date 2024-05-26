@@ -75,18 +75,11 @@ export const Bloglist :React.FC<ownprops> = ({data}) => {
     const hangulno = /[^ ㄱ-ㅣ가-힣]/gm
     console.log(myreact,'리엑트',myvue,mycs,'cs')
     return (
-        <div>
-          {/* <h1> 블로그입니다. </h1> */}
-
         <div className={bloglist.reactwrap}>
         <Reactpage data={myskill} title='기술블로그' check='skill'></Reactpage>
         <Reactpage data={myreact} title='React' check="react"></Reactpage>
         <Reactpage data={mycs} title='Cs 기본지식' check='cs'></Reactpage>
         <Reactpage data={mynext} title='next 기본지식' check='next'></Reactpage>
-        </div>
-
-
-
-        </div>
+        </div>       
     )
 }

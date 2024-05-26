@@ -5,7 +5,7 @@ import "./globals.css";
 import  {Navidivider} from "./components/navidivider/divider";
 import {Providers} from '@/app/store/provider'
 import maincss from './style/main.module.scss'
-
+import ReactQueryProviders from '@/app/hooks/useReactQuery'
 import Maindivider from "./components/mainpage/maindivider";
 import Themech from './themechecker'
 const inter = Inter({ subsets: ["latin"] });
@@ -30,11 +30,13 @@ export default function RootLayout({
       </Providers>
       </header>
       <main>
+       <ReactQueryProviders>
         <Providers>
           <Maindivider>
           {children}
           </Maindivider>
           </Providers>
+          </ReactQueryProviders>
       </main>
   
         </body>

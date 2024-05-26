@@ -4,6 +4,7 @@
     border-right: 1px solid gray;
     height: calc(100vh - 36px);
     background-color:var(--color-background) ;
+    overflow: hidden;
     .top{
         width: 100%;
         height: 35px;

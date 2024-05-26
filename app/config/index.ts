@@ -10,7 +10,7 @@ export const siteConfig:config = {
 			href: "/",
 		},
         {
-            label : "Timeline",
+            label : "Toggle_Theme",
             href: ""
         },
         {

@@ -5,7 +5,7 @@ import reactblog from './blog.module.scss'
 import { useAppDispatch,useAppSelector } from '../../store/hook';
 import {Mystore} from "@/app/store/module/mystore";
 interface Ownprops {
-    data : Steemitdata[]
+    data : Steemitdata[]  
     title : string
     check : string
 }
@@ -22,6 +22,7 @@ export const Reactpage :React.FC<Ownprops> = ({data,title,check}) => {
     },[render])
     const imgsrc = /https.+[$jpg]/i
     const hangulno = /[^ ㄱ-ㅣ가-힣]/gm
+    const movecontainer = React.useRef<HTMLDivElement>(null)
     const moveli  = React.useRef<HTMLAnchorElement[]>([])  
     let liindex= React.useRef<number>(0)
     function movingscroll(action: string){
@@ -29,9 +30,29 @@ export const Reactpage :React.FC<Ownprops> = ({data,title,check}) => {
         --liindex.current 
       }else if(action === 'right' && liindex.current < moveli.current.length-3 && liindex.current >=0 ){++liindex.current}
       // console.log(liindex, 'idx',moveli.current[liindex])
+      console.log(moveli.current[0].getBoundingClientRect().width,'사이즈')
       moveli.current[liindex.current]?.scrollIntoView({
-         behavior: "smooth", block: "nearest", inline: "start" 
+         behavior: "smooth", 
+         block: "nearest", 
+         inline: "start" 
         })
+    }
+    let mwidth = 0;
+    // console.log( movecontainer.current)
+    function movestyle(action:string):void{
+      if (!movecontainer.current) return; // movecontainer가 null이 아닌지 확인
+      let totallength = moveli.current.length;
+      let onewidth = moveli.current[0].getBoundingClientRect().width + 24
+      let totalwidth = (totallength * onewidth) - (onewidth*3) - 24
+      // gap 24px임  마지막에는 갭이 없으니  -24 필요 마지막 3칸정도는 옆으로 이동할 필요가 없음
+      // 마지막 3개의 값만 더 빼주자      
+      if(action=='left' && mwidth <= -onewidth ){
+        mwidth = mwidth + onewidth
+        movecontainer.current.style.transform=`translateX(${mwidth}px)`
+      }else if(action=='right' && mwidth > -totalwidth ){
+        mwidth = mwidth - onewidth
+        movecontainer.current.style.transform=`translateX(${mwidth}px)`
+      }
     }
 
     function pushdisp(txt:string) :void {
@@ -54,21 +75,23 @@ export const Reactpage :React.FC<Ownprops> = ({data,title,check}) => {
       }
     }  
 
-   
     // console.log(typeof moveli.current.length, `${title} title`)
     return (
         <div className={reactblog.leftmargin}>
             {render ?  <div className={reactblog.listbtn}> 
         <button className={reactblog.listbtnLeft} onClick={()=>{
-          movingscroll('left')
+          // movingscroll('left')
+          movestyle('left')
         }}>&lt;</button>
         <button className={reactblog.listbtnRight} onClick={()=>{
-          movingscroll('right')
+          // movingscroll('right')
+          movestyle('right')
         }}>&gt;</button>
         </div> : <></>}
         <h1 className={reactblog.retitle}> {title}</h1>
-        <div className={reactblog.reactflexbox}>
-      
+        <div className={reactblog.overflowhidden}>
+        <div className={reactblog.reactflexbox} ref={movecontainer}>
+     
 {data && data.map((x:Steemitdata,idx:number)=>{ return <a key={x.comment.title+x.comment.created} 
       ref={item =>{ // 각각의 a 태그가 생성될 때마다 moveli 배열에 추가
                         if (item && !moveli.current.includes(item)) {
@@ -97,7 +120,7 @@ export const Reactpage :React.FC<Ownprops> = ({data,title,check}) => {
         </a>
         
     })}
-
+</div>
         </div>
         </div>
     )

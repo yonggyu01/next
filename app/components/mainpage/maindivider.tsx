@@ -3,11 +3,10 @@ import React from 'react'
 import Side from "../../components/mainpage/side/side";
 import Explorer from "../../components/mainpage/explorer/explorer";
 import { useAppDispatch,useAppSelector } from '@/app/store/hook';
-import { Profile } from "../../components/mainpage/profile/profile";
 import main from '../../style/mainpage.module.scss'
-import { Profiledivider } from './profile/profiledivider';
-import Homeview from './homeview/homeview';
 import Mainheader from '@/app/components/mainpage/mainheader/mainheader'
+import Loadingpage from "@/app/components/loadingpage";
+import { Suspense } from 'react'
 type MaindividerProps = React.PropsWithChildren<{}>;
 
 const Maindivider :React.FC<MaindividerProps> = ({ children })=>{
@@ -18,10 +17,15 @@ const Maindivider :React.FC<MaindividerProps> = ({ children })=>{
         }
         {selector == 'vsc'? <Explorer/> : <></>
         }
+          
         <div>
-        <Mainheader/>
+        {selector == 'vsc'? <Mainheader/> : <></>
+        }
+          <Suspense fallback={<Loadingpage></Loadingpage>}>
         { children }
+        </Suspense>
         </div>
+       
         </div>
     )
 }

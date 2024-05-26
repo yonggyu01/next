@@ -1,40 +1,53 @@
 @import '../../style/media.scss';
+@import '../../style/main.module.scss';
 .retitle{
     font-size: 2em;
-    margin: 0 auto 10px;
-    max-width: 1100px;
+    // margin: 0 auto 10px;
+    color : var(--color-text)
+}
+.overflowhidden{
+    width: min(1100px, 80vw);
+    // 모바일에서 이상하면 그냥 min빼버리기
+    overflow: hidden;
 }
 .reactflexbox{
+    white-space: nowrap;
     display: flex;
     gap:24px;
     flex-wrap: nowrap;
-    max-width: 1100px;
-    overflow: hidden;
+    // max-width: 1100px;
+    // overflow: hidden;
+    transition: all 1s;
+    // overflow-x: auto;
     margin-bottom: 35px;
-    margin: auto;
+}
+.reactwrap{
+    height: 920px;
+    overflow-y: auto;
+    background-color: var(--color-mainbackground);
 }
 .reactwraparticle{
     width: 350px;
-    border: 1px solid black;
+    border: 1px solid var(--color-text);
     // box-shadow: 1px 1px 1px 1px black;
+    transition: all 1s;
     padding: 3px;
 }
 .leftmargin{
-padding-left: 30px;
 box-sizing: border-box;
 // margin-left: 15px;
-margin: 0 auto 50px;
+overflow-x: auto;
+margin: 2em;
+width: 100%;
 position: relative;
 }
 .listbtn{
     z-index: 2;
     position: relative;
-    width:100%;
-    max-width: 1090px;
+    width:min(1090px, 77vw);
     top : 180px;   
     font-size: 4em;
     font-weight: 100;
-    margin:0 auto;
     font-family: monospace;
 
     .listbtnLeft {
@@ -82,6 +95,7 @@ position: relative;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    color : var(--color-text);
 }
 .timeline{
     font-size: 0.9em;
@@ -95,6 +109,7 @@ position: relative;
     text-overflow: ellipsis;
     font-size: 0.9em;
     padding-right:  5px;
+    color : var(--color-text);
     box-sizing: border-box;
 
     /* 여러 줄 자르기 추가 스타일 */
@@ -108,19 +123,20 @@ position: relative;
     -webkit-box-orient: vertical;
 }
 .reactwrapa{
-    &:hover .reactwraparticle{
-        border: 1px solid red;
+    transition: all 1s;
+    &:hover{
+       transform: translateY(-5px);
     }
 }
 
-@include tablet {
-    .reactflexbox{
-    max-width: 600px;
-    gap:10px;
-    overflow: hidden;
-    margin-bottom: 35px;
-    }
-    .reactwraparticle{
-        width: 300px;
-       }
-}
+// @include tablet {
+//     .reactflexbox{
+//     max-width: 600px;
+//     gap:10px;
+//     overflow: hidden;
+//     margin-bottom: 35px;
+//     }
+//     .reactwraparticle{
+//         width: 300px;
+//        }
+// }

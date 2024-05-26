@@ -1,7 +1,10 @@
 @import '../../style/main.module.scss';
 .mainwrap { 
-    overflow: scroll;
+    // overflow: scroll;
     position: absolute;
+    // width: calc(100% - 230px);
+    width: 100% ;
     height: calc(100vh - 36px);
+    overflow-x: auto;
     background-color:var(--color-mainbackground);
 }
