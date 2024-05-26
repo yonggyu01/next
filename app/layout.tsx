@@ -22,7 +22,7 @@ export default function RootLayout({
   
   return (
     <html lang="ko">
-      <body className={`${inter.className} ${maincss.body}`} data-theme='light'>
+      <body className={`${inter.className} ${maincss.body}`} data-theme='dark'>
       <header>
       <Providers>
       <Navidivider/>
