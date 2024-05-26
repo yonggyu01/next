@@ -9,7 +9,6 @@
     padding-top: 10px;
     background-color: var(--color-background);
     border-right: 1px solid gray;
-    overflow: hidden;
     @include flex(row){
         justify-content: center;
     }
@@ -39,11 +38,14 @@
 }
 .relative{
     position: relative;
-
     &:hover .popup{
         display: block;
         z-index: 3;
     }
+}
+.relative:hover .popup{
+    display: block;
+    z-index: 3;
 }
 .popup{
     display: none;
