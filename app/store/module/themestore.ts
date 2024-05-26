@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import {Imode,colortheme} from "../../model"
 const initialState = {
     themestate :'vsc' as Imode,
-    colortheme : 'light' as colortheme,
+    colortheme : 'dark' as colortheme,
     Terminal : false as boolean,
     selecticon : "vschome" as string
 }

@@ -57,7 +57,7 @@ const Side :React.FC = ()=>{
         {list.current.map(el=> <li className={side.relative} key={'side'+el.title}>
             <a href={el.href? el.href : '#none'} onClick={()=>{
                 if(el?.action){
-                    el.toggle? dispatch(Themestore.actions.changecolortheme('dark')) : dispatch(Themestore.actions.changecolortheme('light'))
+                    el.toggle? dispatch(Themestore.actions.changecolortheme('light')) : dispatch(Themestore.actions.changecolortheme('dark'))
                     el.action(!el.toggle)
                 }
                 if(el.href){
