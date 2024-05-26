@@ -26,7 +26,7 @@ export const Bloglist :React.FC<ownprops> = ({data}) => {
           let {tags} = JSON.parse(item.comment.json_metadata)  
           if (Array.isArray(tags)){
               for(let x of tags){
-                if(x === 'yongreact'){
+                if(x === 'yongreact' || x === 'yongvue' || x === 'yongetc' ||   x=== 'yongnext' ){
                   setreact(prevState => {
                     if(!prevState.includes(item)){return prevState = [...prevState, item]}
                   return prevState}
@@ -34,29 +34,20 @@ export const Bloglist :React.FC<ownprops> = ({data}) => {
                   // dispatch(Mystore.actions.addreact(item))
                   // setreact([...myreact, item])
                   // console.log(myreact, '일치',item)
-                }else if(x === 'yongvue'){
-                  setvue(prevState => {
-                    if(!prevState.includes(item)){return prevState = [...prevState, item]}
-                  return prevState})
-                    // dispatch(Mystore.actions.addvue(item))
-                }else if(x === 'yongetc'){
-                  //  setetc([...myetc,item])
-                  setetc(prevState => {
-                    if(!prevState.includes(item)){return prevState = [...prevState, item]}
-                  return prevState})
-                  // dispatch(Mystore.actions.addetc(item))
-                }else if( x=== 'yongnext'){
-                  setnext(prevState => {
-                    if(!prevState.includes(item)){return prevState = [...prevState, item]}
-                  return prevState})
-                  // dispatch(Mystore.actions.addnext(item))
-                  }else if( x=== 'yongcs'){
+                }else if( x=== 'yongcs'){
                     setcs(prevState => {
                       if(!prevState.includes(item)){return prevState = [...prevState, item]}
                     return prevState})
                     // dispatch(Mystore.actions.addcs(item))
                     // console.log(mycs, 'cs 일치',item)
                    }else if( x=== 'yongskill'){
+                    setskill(prevState => {
+                      if(!prevState.includes(item)){return prevState = [...prevState, item]}
+                    return prevState})
+                    // dispatch(Mystore.actions.addskill(item))
+                    // console.log(mycs, 'cs 일치',item)
+                   
+                   }else if( x=== 'yongproject'){
                     setskill(prevState => {
                       if(!prevState.includes(item)){return prevState = [...prevState, item]}
                     return prevState})
@@ -77,9 +68,9 @@ export const Bloglist :React.FC<ownprops> = ({data}) => {
     return (
         <div className={bloglist.reactwrap}>
         <Reactpage data={myskill} title='기술블로그' check='skill'></Reactpage>
-        <Reactpage data={myreact} title='React' check="react"></Reactpage>
-        <Reactpage data={mycs} title='Cs 기본지식' check='cs'></Reactpage>
-        <Reactpage data={mynext} title='next 기본지식' check='next'></Reactpage>
+        <Reactpage data={myreact} title='개발 회고' check="react"></Reactpage>
+        <Reactpage data={mycs} title='Cs지식 공부 회고' check='cs'></Reactpage>
+        <Reactpage data={mynext} title='프로젝트 회고' check='next'></Reactpage>
         </div>       
     )
 }
