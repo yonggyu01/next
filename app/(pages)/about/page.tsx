@@ -87,10 +87,10 @@ export default async function Vschome(){
             <span className={about.tagname}> img</span>
             <span className={about.attrib}> src</span>
             <span className={about.tagname}> =</span>
-            <span className={about.attval}> "./내사진.png"</span>
+            <span className={about.attval}> "./내사진.png"<Image src="/yong.jpg" alt='svg' width={800} height={500} className={`${profile.headimg} ${about.mypic}`}></Image> </span>
+           
             <span className={about.ltgt}> &gt; </span> 
           </div>
-           <Image src="/yong.jpg" alt='svg' width={800} height={500} className={`${profile.headimg} ${about.mypic}`}></Image>
       </div>
       <div className={about.countnum}>
       <span className={`${about.text} ${about.mleft1}`}> 새롭게 배운 기술을 업무에 적용하여 좀 더 나은 서비스를 구축하는 것에 가장 큰 보람을 느낍니다</span>

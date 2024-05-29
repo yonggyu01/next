@@ -80,12 +80,12 @@ export const Reactpage :React.FC<Ownprops> = ({data,title,check}) => {
         <div className={reactblog.leftmargin}>
             {render ?  <div className={reactblog.listbtn}> 
         <button className={reactblog.listbtnLeft} onClick={()=>{
-          // movingscroll('left')
-          movestyle('left')
+          movingscroll('left')
+          // movestyle('left')
         }}>&lt;</button>
         <button className={reactblog.listbtnRight} onClick={()=>{
-          // movingscroll('right')
-          movestyle('right')
+          movingscroll('right')
+          // movestyle('right')
         }}>&gt;</button>
         </div> : <></>}
         <h1 className={reactblog.retitle}> {title}</h1>

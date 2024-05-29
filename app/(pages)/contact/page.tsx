@@ -15,6 +15,7 @@ export default async function Vschome(){
 
   return (
     <div className={about.mainwrap}>
+      <div className={about.gridwrap}>
       <h1 className={about.ctitle}> Contact Me</h1>
       <div className={about.countnum}>
           <div className={about.flex}>
@@ -49,11 +50,15 @@ export default async function Vschome(){
                  <span className={about.ltgt}> &#125; </span>   
           </div>
       </div>
-
-    <h2 className={about.ctitle}>
+      </div>
+     
+<div className={about.gridwrap1}>
+<h2 className={about.stitle}>
      방명록 남기기
     </h2>
    <Ter></Ter>
     </div>
+</div>
+   
   );
 }

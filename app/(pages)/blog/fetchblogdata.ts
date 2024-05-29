@@ -15,4 +15,5 @@ export const blogdata = async ():Promise<SteemitResult> => {
    let result = await data.json()
    console.log('datafetching..  서버에서 재검증중')
    return result
+
  }

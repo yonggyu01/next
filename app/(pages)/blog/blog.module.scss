@@ -1,22 +1,25 @@
 @import '../../style/media.scss';
 @import '../../style/main.module.scss';
+
 .retitle{
     font-size: 2em;
     // margin: 0 auto 10px;
     color : var(--color-text)
 }
 .overflowhidden{
-    width: min(1100px, 80vw);
-    // 모바일에서 이상하면 그냥 min빼버리기
-    overflow: hidden;
+    // width: min(1100px, 80vw);
+    // // 모바일에서 이상하면 그냥 min빼버리기
+    // overflow: hidden;
 }
 .reactflexbox{
     white-space: nowrap;
     display: flex;
     gap:24px;
     flex-wrap: nowrap;
+
     // max-width: 1100px;
-    // overflow: hidden;
+    overflow-x: hidden;
+    width: clamp(40%, 1100px, 90%);
     transition: all 1s;
     // overflow-x: auto;
     margin-bottom: 35px;
@@ -37,14 +40,15 @@
 box-sizing: border-box;
 // margin-left: 15px;
 overflow-x: auto;
-margin: 2em;
+padding-left: 2em;
+padding-top: 2em;
 width: 100%;
 position: relative;
 }
 .listbtn{
     z-index: 2;
     position: relative;
-    width:min(1090px, 77vw);
+    width: clamp(40%, 1090px, 90%);
     top : 180px;   
     font-size: 4em;
     font-weight: 100;
@@ -129,14 +133,21 @@ position: relative;
     }
 }
 
-// @include tablet {
-//     .reactflexbox{
-//     max-width: 600px;
-//     gap:10px;
-//     overflow: hidden;
-//     margin-bottom: 35px;
-//     }
-//     .reactwraparticle{
-//         width: 300px;
-//        }
-// }
+@include tablet {
+    .reactflexbox{
+    margin-bottom: 35px;
+    gap:20px;
+    }
+    .reactwraparticle{
+        width: 250px;
+       }
+}
+@include mobile{
+    .reactflexbox{
+        margin-bottom: 35px;
+        gap:20px;
+        }
+        .reactwraparticle{
+            width: 200px;
+           }
+}

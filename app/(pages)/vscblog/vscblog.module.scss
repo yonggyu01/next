@@ -1,10 +1,18 @@
 @import '../../style/main.module.scss';
+@import '../../style/mixin.scss';
+@import '../../style/media.scss';
 .mainwrap { 
     // overflow: scroll;
     position: absolute;
     // width: calc(100% - 230px);
-    width: 100% ;
+    width: calc(100vw - 224px);
     height: calc(100% - 88px);
     overflow-x: auto;
     background-color:var(--color-mainbackground);
+}
+
+@include mobile{
+    .mainwrap{
+        width: calc(100vw - 50px);
+    }
 }

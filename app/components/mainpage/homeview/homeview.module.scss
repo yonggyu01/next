@@ -1,10 +1,11 @@
 @import '../../../style/main.module.scss';
 @import '../../../style/mixin.scss';
-// .full{
-//     height: calc(100vh - 63px);
-// }
+@import '../../../style/media.scss';
+.full{
+    width:  calc(100vw - 224px);
+}
 .bgc{
-    height: calc(100vh - 63px);
+    height: calc(100vh - 61px);
     background-color:var(--color-mainbackground);
     @include flex(column){
         justify-content: center;
@@ -41,4 +42,70 @@
 .img{
     width: 380px;
     opacity: 0.2;
+}
+
+@include tablet{
+  .full{
+    h1{
+        
+        font-size: 1.8em;
+    }
+    .btns{
+
+        @include flex(row){
+            width: 250px;
+            font-size: 0.8em;
+
+           
+        }
+        button{
+            border: 2px solid salmon;
+            padding: 0.2em;
+    
+        }
+    }
+    }
+    .img{
+        width: 150px;
+        opacity: 0.2;
+    
+    }
+
+}
+
+@include mobile{
+    .full{
+        width:  calc(100vw - 50px);
+        h1{
+        
+            font-size: 1.5em;
+        }
+        h2{
+            font-size: 0.8em;
+            margin-bottom: 15px;
+        }
+        .btns{
+
+            @include flex(row){
+                justify-content: center;
+                width: 300px;
+                font-size: 0.8em;
+
+               
+            }
+            button{
+                &:not(:first-child){
+                    display: none;
+                }
+                border: 2px solid salmon;
+                padding: 0.2em;
+        
+            }
+        }
+    }
+    .img{
+        width: 150px;
+        opacity: 0.2;
+    }
+    
 }

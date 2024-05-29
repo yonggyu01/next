@@ -6,11 +6,11 @@ import { Bloglist } from "./bloglist";
 import {Steemitdata,SteemitResult} from "@/app/model"
 
 export default async function Blog(){
-  const data :SteemitResult = await blogdata()
+  const data :SteemitResult | void = await blogdata().catch(err=>console.log('data 없음'))
   console.log(data)
   return (
     <div className={blog.mainwrap}>
-     <Bloglist data={data}></Bloglist>
+     {data? <Bloglist data={data}></Bloglist> : <></>}
     </div>
   );
 }
