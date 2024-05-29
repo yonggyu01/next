@@ -1,0 +1,9 @@
+@import '../../style/mixin.scss';
+@import '../../style/main.module.scss';
+.mainwrap { 
+    height: calc(100vh - 63px);
+    background-color:var(--color-mainbackground);
+   padding: 2em;
+   box-sizing: border-box;
+   counter-reset: line;
+}

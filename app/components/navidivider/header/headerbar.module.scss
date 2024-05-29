@@ -1,5 +1,7 @@
 @import '../../../style/mixin.scss';
+@import '../../../style/media.scss';
 @import '../../../style/main.module.scss';
+
 .flexbar {
     @include flex(row){
         gap:14px;
@@ -11,7 +13,7 @@
     background-color: var(--color-background);
 }
 .appicon{
-    width: 32px;
+    max-width: 32px;
     margin: 0px 0px 0 10px ;
     @include flex(row){
         justify-content: center;
@@ -58,7 +60,7 @@
     }
     .titleright{
         @include flex(row){
-            margin-right: 20px;
+            // margin-right: 20px;
             justify-content: end;
             align-items: center;           
         }
@@ -71,5 +73,16 @@
             // border:1px dashed black;
             color: var(--color-text)
         }
+    }
+}
+@include mobile{
+    .flexbar{
+        .topma:not(:first-child){
+            display: none;
+        }
+    }
+    .headerline{
+        grid-template-columns: 20px 1fr 20px;
+        gap: 10px;
     }
 }

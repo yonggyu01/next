@@ -8,6 +8,7 @@ import maincss from './style/main.module.scss'
 import ReactQueryProviders from '@/app/hooks/useReactQuery'
 import Maindivider from "./components/mainpage/maindivider";
 import Themech from './themechecker'
+import Footer from "./components/footercom/footercom"
 const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Yonggyu's blog",
@@ -38,7 +39,10 @@ export default function RootLayout({
           </Providers>
           </ReactQueryProviders>
       </main>
-  
+        
+        <footer className={maincss.footerposition}>
+    <Footer></Footer>
+        </footer>
         </body>
     </html>
   );

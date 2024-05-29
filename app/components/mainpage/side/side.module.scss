@@ -4,7 +4,6 @@
 
 
 .wrap{
-    height: calc(100vh - 36px);
     width: 50px;
     padding-top: 10px;
     background-color: var(--color-background);
@@ -14,7 +13,7 @@
     }
 }
 .flexbox{
-    width: 100%;
+    // width: 100%;
 
 
 @include flex(column){

@@ -1,0 +1,38 @@
+@import '../../style/main.module.scss';
+@import '../../style/mixin.scss';
+
+.flexwrap{
+// width: 100vw;
+height: 25px;
+padding-left: 10px;
+padding-right: 10px;
+position: relative;
+background-color: var(--footer-bg);
+font-size: 0.85em;
+@include flex(row){
+    justify-content: space-between;    
+}
+.box{
+    @include boxcenter;
+    gap:3px;
+}
+.flextext{
+    @include flex(row){
+        gap :10px;
+        align-items: center;
+        color:var(--color-text)
+        
+    };
+    li{
+        font-size: 0.85em;
+        color:var(--color-text)
+    }
+    span{
+        font-size: 0.85em;
+    }
+    .svg{
+        width: 15px;
+        height: 15px;
+    }
+}
+}

@@ -5,8 +5,10 @@ $text-color-1: #232323;
 $text-color-2: #fff;
 $text-color-light1: rgb(68, 68, 68);
 $text-color-light2: black;
-$text-color-dark1 : rgb(165, 164, 164);
+$text-color-dark1 : rgb(168, 168, 168);
 $text-color-dark2 : rgb(255, 255, 255);
+$footer-bg1 : #29a2c7 ;
+$footer-bg2 : #424242 ;
 
 $bg-color-1: #fff;
 $bg-color-2: #232323;
@@ -20,6 +22,7 @@ $bg-main-color-2 :#24292e ;
     --color-background: #{$bg-color-1};
     --color-mainbackground: #{$bg-main-color-1};
     --color-btn : #{$btn-color-1};
+    --footer-bg : #{$footer-bg1};
   }
   
 .body[data-theme="dark"] {
@@ -29,5 +32,5 @@ $bg-main-color-2 :#24292e ;
   --color-mainbackground: #{$bg-main-color-2};
   --color-background: #{$bg-color-2};
   --color-btn : #{$btn-color-2};
+  --footer-bg : #{$footer-bg2};
 }
-

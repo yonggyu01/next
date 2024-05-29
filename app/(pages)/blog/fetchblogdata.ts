@@ -8,10 +8,11 @@ export const blogdata = async ():Promise<SteemitResult> => {
    body: JSON.stringify({
      jsonrpc: '2.0',
      method: 'condenser_api.get_blog',
-     params: ['yonggyu01', 0, 150],  
+     params: ['yonggyu01', 0, 125],  
      id: '1',}),
-  cache: 'no-store'
+      next: { revalidate: 3600 } 
    })
    let result = await data.json()
+   console.log('datafetching..  서버에서 재검증중')
    return result
  }

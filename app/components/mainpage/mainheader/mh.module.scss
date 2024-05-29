@@ -1,10 +1,12 @@
 @import '../../../style/main.module.scss';
 @import '../../../style/mixin.scss';
+@import '../../../style/media.scss';
 
 .flex{
  @include flex(row){
-
-    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    width: calc(100vw - 224px);
     gap:10px;
     background-color: var(--color-background);
  }
@@ -31,5 +33,11 @@
         // width: 100%;
         border-top: 3px solid transparent;
         color: var(--color-text);
+    }
+}
+@include mobile{
+
+    .flex{
+        width: calc(100vw - 50px);
     }
 }
