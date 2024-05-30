@@ -38,15 +38,15 @@
     font-size: 1.5em;
 }
 .tagname{
-    color :#9de6a4;
+    color :var(--tagname);
     font-size: 1.5em;
 }
 .attrib{
-    color : #ae93ea;
+    color :var(--atrri);
     font-size: 1.5em;
 }
 .attval{
-    color : #a3c6f4;
+    color : var(--atval );
     font-size: 1.5em;
     &:hover .mypic{
         display: block;

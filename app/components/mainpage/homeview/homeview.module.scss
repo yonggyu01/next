@@ -53,8 +53,9 @@
     .btns{
 
         @include flex(row){
-            width: 250px;
+            width: 100%;
             font-size: 0.8em;
+            justify-content: space-evenly;
 
            
         }
@@ -88,7 +89,7 @@
 
             @include flex(row){
                 justify-content: center;
-                width: 300px;
+                width: 100%;
                 font-size: 0.8em;
 
                
@@ -99,6 +100,7 @@
                 }
                 border: 2px solid salmon;
                 padding: 0.2em;
+                width: 200px;
         
             }
         }

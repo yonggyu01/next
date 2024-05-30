@@ -8,7 +8,7 @@ const Footer:React.FC = ()=>{
             <span className="material-symbols-outlined">
 share
             </span>
-                <p>master</p>
+                <p>Github</p>
             </div>
             </a>
             <div className={FT.box}>

@@ -22,8 +22,7 @@ export const Bloglist :React.FC<ownprops> = ({data}) => {
   
   console.log(myreact, '잘들어오나 보자')
     function filterHashtag(array:Steemitdata[]){
-      if(!array)return ;
-      array.forEach(item =>{
+         array.forEach(item =>{
           let {tags} = JSON.parse(item.comment.json_metadata)  
           if (Array.isArray(tags)){
               for(let x of tags){

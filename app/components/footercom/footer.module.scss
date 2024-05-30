@@ -1,5 +1,6 @@
 @import '../../style/main.module.scss';
 @import '../../style/mixin.scss';
+@import '../../style/media.scss';
 
 .flexwrap{
 // width: 100vw;
@@ -35,4 +36,11 @@ font-size: 0.85em;
         height: 15px;
     }
 }
+}
+@include mobile{
+    .box{
+        &:not(:first-child){
+            display: none;
+        }
+    }
 }

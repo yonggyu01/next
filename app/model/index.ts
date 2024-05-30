@@ -44,3 +44,13 @@ export interface filenames {
         href : string;
     }
 
+export type noticeboard ={
+    userid : string,
+    content : string,
+    create : string,
+    id?:string
+}
+export type Ifetch = {
+    msg : string,
+    data: noticeboard
+}

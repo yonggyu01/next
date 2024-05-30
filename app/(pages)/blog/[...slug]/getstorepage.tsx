@@ -48,14 +48,14 @@ const Getstorepage:React.FC<ownprops> = ({params})=>{
             <h2 className={detail.detailtitle}>{datalist[inumber]?.comment.title.replace(/\(.*?\)/,'')}</h2>
              <p className={detail.detaildate}>작성일 : {datalist[inumber]?.comment.created.match(/\d{4}-\d{2}-\d{2}/)?.join('') } </p>
             {datalist[inumber]?.comment.body.split("\n").map((text,idx,arg)=>{    
-                 if(text.match(/!.*\)/gm)&& arg.length-4 > idx){
+                 if(text.match(/!.*\)/gm)&& arg.length-1 > idx){
                   return <img
                   alt=""
                   src={text.match(imgsrc)?.join('')}
                   className={detail.detailtitleimg}
                 />
                 }else{
-                const mytext = text.replace(imgsrc, '').replace(/!.*\)/gm,'').replace(/스테픈.*/gm,'').replace(/<hr>.*/g,'')
+                const mytext = text.replace(imgsrc, '').replace(/!.*\)/gm,'')
                 return  <p className={detail.detailcontent}>
                 {mytext}
             </p>

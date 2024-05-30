@@ -1,9 +1,115 @@
 @import '../../style/mixin.scss';
+@import '../../style/media.scss';
 @import '../../style/main.module.scss';
 .mainwrap { 
     height: calc(100vh - 63px);
+    width: calc(100vw - 224px);
+    overflow-y: auto;
     background-color:var(--color-mainbackground);
-   padding: 2em;
+   padding: 1em;
    box-sizing: border-box;
    counter-reset: line;
+    .title{
+        color: var(--color-text);
+        font-size: 2em;
+        font-weight: bold;
+        margin-bottom: 0.8em;
+    }
+    .list{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap : 15px;
+    }
+    .wrapbox{
+        position: relative;
+        border-radius: 15px;
+        overflow: hidden;
+        background-color: var(--color-text);
+        .img{
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+        }
+        .subtitle{
+            color: var(--color-background);
+            font-size: 1.2em;
+            margin-bottom: 0.5em;
+        }
+        .padding{
+            padding: 0.8em;
+            box-sizing: border-box;
+        }
+        .contents{
+            color: var(--color-background);
+            font-size: 0.8em;
+        }
+        .point{
+            color: var(--color-background);
+            font-size: 0.8em;
+            margin-bottom: 1em;
+        }
+        .skilllist{
+            color: var(--color-background);
+        }
+        .skill{
+            color: var(--color-background);
+            margin-bottom: 40px;
+            span{
+                margin-right: 5px;
+            }
+        }
+        .btnflex{
+            position: absolute;
+            bottom: 10px;
+            left:0;
+            display: flex;
+            justify-content: center;
+            width:  100%;
+            gap: 10px;
+            .git{
+                border: 2px solid #f38f1e;
+                padding:5px 10px;
+                width: max(60px,30%);
+                border-radius: 15px;
+                color: var(--color-background);
+                &:hover{
+                    background-color: #f38f1e;
+                    color : var(--color-text)
+                }
+                @include boxcenter;
+                
+            }
+            .visit{
+                border: 2px solid #416dff;
+                padding:5px 10px;
+                border-radius: 15px;
+                width: max(60px,30%);
+                color: var(--color-background);
+                @include boxcenter;
+                &:hover{
+                    background-color: #416dff;
+                    color : var(--color-text)
+                }
+
+            }
+        }
+    }
+
+
+}
+@include tablet{
+    .mainwrap { 
+        .list{
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+}
+@include mobile{
+    .mainwrap { 
+        width : calc(100vw - 50px);
+        height: calc(100vh - 90px);
+        .list{
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
 }

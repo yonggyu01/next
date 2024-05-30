@@ -13,7 +13,7 @@ export const Reactpage :React.FC<Ownprops> = ({data,title,check}) => {
     const [render, setrender] = React.useState<boolean>(false)
     const dispatch = useAppDispatch()
     React.useEffect(()=>{
-      if(moveli.current.length > 3 ){
+      if(moveli.current.length >= 3 ){
         setrender(true)
       }else {
         setrender(false)

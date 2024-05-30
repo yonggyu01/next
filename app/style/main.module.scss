@@ -7,8 +7,17 @@ $text-color-light1: rgb(68, 68, 68);
 $text-color-light2: black;
 $text-color-dark1 : rgb(168, 168, 168);
 $text-color-dark2 : rgb(255, 255, 255);
+$text-tagname1 : #42c24f;
+$text-tagname2 : #9de6a4;
+$text-attri1 :  #7445d8;
+$text-attri2 :  #ae93ea;
+$text-arttval1 : #468fee;
+$text-arttval2 : #a3c6f4;
+
 $footer-bg1 : #29a2c7 ;
 $footer-bg2 : #424242 ;
+
+
 
 $bg-color-1: #fff;
 $bg-color-2: #232323;
@@ -23,6 +32,9 @@ $bg-main-color-2 :#24292e ;
     --color-mainbackground: #{$bg-main-color-1};
     --color-btn : #{$btn-color-1};
     --footer-bg : #{$footer-bg1};
+    --tagname : #{$text-tagname1};
+    --atrri : #{$text-attri1 };
+    --atval : #{$text-arttval1};
   }
   
 .body[data-theme="dark"] {
@@ -33,4 +45,7 @@ $bg-main-color-2 :#24292e ;
   --color-background: #{$bg-color-2};
   --color-btn : #{$btn-color-2};
   --footer-bg : #{$footer-bg2};
+  --tagname : #{$text-tagname2};
+  --atrri : #{$text-attri2 };
+  --atval : #{$text-arttval2};
 }

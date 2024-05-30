@@ -40,16 +40,16 @@
     font-size: 1.5em;
 }
 .tagname{
-    color :#9de6a4;
+    color :var(--tagname);
     font-size: 1em;
     font-weight: 200;
 }
 .attrib{
-    color : #ae93ea;
+    color :var(--atrri);
     font-size: 1.5em;
 }
 .attval{
-    color : #a3c6f4;
+    color : var(--atval );
     font-size: 1.5em;
 }
 .mleft{
@@ -63,6 +63,11 @@
     font-size: 1.5em;
 
 }
+.blist{
+    display: flex;
+    gap: 10px;
+    padding-left: 0.8em;
+}
 .mypic{
     position: absolute;
     left:350px;
@@ -72,12 +77,12 @@
 .ctitle{
     font-size: 2em;
     color :var(--color-text);
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
 }
 .stitle{
     font-size: 2em;
     color :var(--color-text);
-    padding-left: 1em;
+    padding-left: 0.5em;
 }
 .mb{
     margin-bottom: 2em;
@@ -128,13 +133,77 @@
     margin-left: 10px;
 }
 .gridwrap{
-    padding: 2em;
+    padding: 1em;
 }
 .gridwrap1{
     position: relative;;
 }
+@include tablet{
+    .countnum{
+        &::before{
+        margin-right: 1rem;
+        min-width: 26px;
+      
+        font-size: 1.2em;
+    }
+    }
+    .ltgt{
+        font-size: 1.2em;
+    }
+    .tagname{
+        font-size: 1em;
+    }
+    .attrib{
+        font-size: 1.2em;
+    }
+    .attval{
+        font-size: 1.2em;
+    }
+    .mleft{
+        margin-left:1.2em;
+    }
+    .mleft1{
+        margin-left: 0.9em;}
+    .text{
+        color :var(--color-text);
+        font-weight: 600;
+        font-size: 1.2em;
+    
+    }
+}
 @include mobile{
     .mainwrap { 
         width: calc(100vw - 50px);
+    }
+    .countnum{
+        &::before{
+        margin-right: 0.5rem;
+        min-width: 26px;
+      
+        font-size: 1em;
+    }
+    }
+    .ltgt{
+        font-size: 1em;
+    }
+    .tagname{
+        font-size: 0.8em;
+    }
+    .attrib{
+        font-size: 1em;
+    }
+    .attval{
+        font-size: 1em;
+    }
+    .mleft{
+        margin-left:1em;
+    }
+    .mleft1{
+        margin-left: 0.7em;}
+    .text{
+        color :var(--color-text);
+        font-weight: 600;
+        font-size: 1em;
+    
     }
 }
