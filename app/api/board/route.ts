@@ -14,12 +14,12 @@ async function fetchboard() {
   querySnapshot.forEach((doc) => {
     // doc.data() is never undefined for query doc snapshots
     // console.log(doc.data(),'가져온거 값')
-    const board= {
+    const board :noticeboard= {
       userid : doc.data()["userid"],
       content : doc.data()["content"],
       create : doc.data()["create"],
       
-    } as noticeboard
+    } 
     result.push(board)
     // doc.data()
   });
@@ -28,14 +28,15 @@ async function fetchboard() {
 // 추가하기
 async function addboard(content:string,create:string,userid:string) {
   // const create = Timestamp.fromDate(new Date())
-  const newboardRef = doc(mydb);
+
+  const newboardRef =await addDoc(mydb,{content,create,userid});
   const data ={
     content,
     id:newboardRef.id,
     create,
     userid 
   }
-  await setDoc(newboardRef, data);
+  // await setDoc(newboardRef, data);
  
 return data
 }
@@ -50,7 +51,9 @@ export async function GET (req : NextRequest)  {
     return NextResponse.json(response,{ status : 200 })
   }
 export async function POST (req : NextRequest)  {
+  // console.log(req.clone().json() ,'뭐라고 들어오지?')
   const {content,create,userid} =await req.json()
+  console.log(content,create,userid,'서버에 잘들어오나')
   const adddata = await addboard(content,create,userid);
   const response :Ifetch = {
       msg : "데이터추가성공",

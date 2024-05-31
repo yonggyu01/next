@@ -12,10 +12,25 @@ const Boardview :React.FC = ()=>{
         const get:AxiosResponse = await axios.get('/api/board')
         const result = get.data
         setlist(result)
+        
         } catch (err){
             console.log('데이터 가져오기 오류')
         }
     }
+    async function addboard (obj:noticeboard){
+        try{
+                       const add:AxiosResponse = await axios.post('/api/board',obj)
+            const result = add.data
+            setrender(true)
+             console.log(result)  
+            //  return result
+
+        }catch(err){
+            console.log('server')
+        }
+    }
+
+
     React.useEffect(()=>{
         setrender(false)
         getdata()
@@ -26,7 +41,7 @@ const Boardview :React.FC = ()=>{
             <div>
                 <h2 className={board.tti}>TERMINAL</h2>
                 <div className={board.blank}></div>
-                <details open>
+                <details>
                     <summary>
                         {/* 도움말 */}
                     </summary>
@@ -36,13 +51,14 @@ const Boardview :React.FC = ()=>{
                 </details>
                 {
                  list && list.map(el=> <div className={board.blist}>
-                    <span className={board.text}>{el.userid}</span>
-                    <span className={board.attrib}>{el.content}</span>
+                    <span className={`${board.text} ${board.eclip}`}>{el.userid}</span>
+                    <span className={`${board.attrib} ${board.eclip}`}>{el.content}</span>
+                    <span className={board.text}>{el.create?.replace(/(\d{1,2}월\d{1,2}일).*/, "$1")}</span>
                  </div>)
                 }
            
             </div>
-            <Inp></Inp>
+            <Inp addboard={addboard}></Inp>
         </div>
     )
 }

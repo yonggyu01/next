@@ -47,7 +47,7 @@ export interface filenames {
 export type noticeboard ={
     userid : string,
     content : string,
-    create : string,
+    create? : string,
     id?:string
 }
 export type Ifetch = {
