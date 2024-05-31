@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+
 import { Inter } from "next/font/google";
 import React from 'react'
 import "./globals.css";
@@ -20,9 +21,10 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  
+ 
   return (
     <html lang="ko">
+      
       <body className={`${inter.className} ${maincss.body}`} data-theme='dark'>
       <header>
       <Providers>
