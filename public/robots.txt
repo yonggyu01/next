@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://next-myblog-5rdu.vercel.app/sitemap.xml
