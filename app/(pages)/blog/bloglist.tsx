@@ -15,7 +15,7 @@ export const Bloglist :React.FC<ownprops> = ({data}) => {
   console.log(list)
   const [myreact,setreact] = React.useState<Steemitdata[]>([])
   const [myvue,setvue] =  React.useState<Steemitdata[]>([])
-  const [myetc,setetc] =  React.useState<Steemitdata[]>([])
+  const [myreview,setreview] =  React.useState<Steemitdata[]>([])
   const [mynext,setnext] =  React.useState<Steemitdata[]>([])
   const [myskill,setskill] =  React.useState<Steemitdata[]>([])
   const [mycs,setcs] =  React.useState<Steemitdata[]>([])
@@ -47,8 +47,8 @@ export const Bloglist :React.FC<ownprops> = ({data}) => {
                     // dispatch(Mystore.actions.addskill(item))
                     // console.log(mycs, 'cs 일치',item)
                    
-                   }else if( x=== 'yongproject'){
-                    setskill(prevState => {
+                   }else if( x=== 'yongreview'){
+                    setreview(prevState => {
                       if(!prevState.includes(item)){return prevState = [...prevState, item]}
                     return prevState})
                     // dispatch(Mystore.actions.addskill(item))
@@ -70,7 +70,7 @@ export const Bloglist :React.FC<ownprops> = ({data}) => {
         <Reactpage data={myskill} title='기술블로그' check='skill'></Reactpage>
         <Reactpage data={myreact} title='개발 회고' check="react"></Reactpage>
         <Reactpage data={mycs} title='Cs지식 공부 회고' check='cs'></Reactpage>
-        <Reactpage data={mynext} title='프로젝트 회고' check='next'></Reactpage>
+        <Reactpage data={myreview} title='프로젝트 회고' check='review'></Reactpage>
         </div>       
     )
 }

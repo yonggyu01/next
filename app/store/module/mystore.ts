@@ -9,7 +9,8 @@ export const initialState = {
         skill :  [] as Steemitdata[],
         cs :  [] as Steemitdata[],
         next :  [] as Steemitdata[],
-        etc :  [] as Steemitdata[]
+        etc :  [] as Steemitdata[],
+        review :  [] as Steemitdata[]
     }
 }
 
@@ -35,6 +36,9 @@ export const Mystore = createSlice({
     },
     addetc:(state,action:PayloadAction<Steemitdata[]>)=>{
         state.blogdata.etc =action.payload
+    },
+    addreview:(state,action:PayloadAction<Steemitdata[]>)=>{
+        state.blogdata.review =action.payload
     }
     },
 });

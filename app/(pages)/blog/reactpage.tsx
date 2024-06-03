@@ -72,6 +72,9 @@ export const Reactpage :React.FC<Ownprops> = ({data,title,check}) => {
         case 'vue' : 
         dispatch(Mystore.actions.addvue(data))
         return;
+        case 'review' : 
+        dispatch(Mystore.actions.addreview(data))
+        return;
       }
     }  
 
