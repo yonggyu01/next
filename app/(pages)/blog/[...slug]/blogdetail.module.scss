@@ -2,9 +2,9 @@
 @import '../../../style/media.scss';
 @import '../../../style/main.module.scss';
 .detailsection{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
     .detailwrap{
         margin: 0 auto;
         background-color: var(--color-mainbackground);
@@ -18,7 +18,7 @@
         }
         .detailgrid{
             .go{
-                height: 885px;
+                height: 800px;
                 overflow-y: auto;
             }
             padding: 1.5em;
@@ -83,6 +83,12 @@
    
         .detailwrap{
             width: calc(100vw - 50px);
+            .detailgrid{
+                .go{
+                    height: 500px;
+                    overflow-y: auto;
+                }
+            }
         }
     }
 }
