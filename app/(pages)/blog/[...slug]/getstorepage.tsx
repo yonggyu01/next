@@ -77,7 +77,7 @@ const Getstorepage:React.FC<ownprops> = ({params})=>{
             </a>
             <a  onClick={()=> {
               if(Number(inumber)+1 <datalist.length) {
-                window.location.href= `/${select==='vsc'? "vscblog" : "blog"}/${pagename}/${Number(inumber)+1}`
+                window.location.href= `/blog/${pagename}/${Number(inumber)+1}`
               }
               else{alert('다음페이지가 없습니다.')}
             }}
