@@ -67,9 +67,13 @@ export const Bloglist :React.FC<ownprops> = ({data}) => {
     console.log(myreact,'리엑트',myvue,mycs,'cs')
     return (
         <div className={bloglist.reactwrap}>
+          <h1 className={bloglist.dtitle}>기술블로그</h1>
         <Reactpage data={myskill} title='기술블로그' check='skill'></Reactpage>
+        <h1  className={bloglist.dtitle} >개발회고</h1>
         <Reactpage data={myreact} title='개발 회고' check="react"></Reactpage>
+        <h1  className={bloglist.dtitle}>프로젝트회고</h1>
         <Reactpage data={myreview} title='프로젝트 회고' check='review'></Reactpage>
+        <h1  className={bloglist.dtitle}>cs공부지식 회고</h1>
         <Reactpage data={mycs} title='Cs지식 공부 회고' check='cs'></Reactpage>
         </div>       
     )
