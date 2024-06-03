@@ -69,8 +69,8 @@ export const Bloglist :React.FC<ownprops> = ({data}) => {
         <div className={bloglist.reactwrap}>
         <Reactpage data={myskill} title='기술블로그' check='skill'></Reactpage>
         <Reactpage data={myreact} title='개발 회고' check="react"></Reactpage>
-        <Reactpage data={mycs} title='Cs지식 공부 회고' check='cs'></Reactpage>
         <Reactpage data={myreview} title='프로젝트 회고' check='review'></Reactpage>
+        <Reactpage data={mycs} title='Cs지식 공부 회고' check='cs'></Reactpage>
         </div>       
     )
 }
