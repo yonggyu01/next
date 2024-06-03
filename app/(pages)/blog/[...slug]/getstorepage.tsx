@@ -12,6 +12,7 @@ children? : React.ReactNode
 const Getstorepage:React.FC<ownprops> = ({params})=>{
     const list = useAppSelector((state)=>state.persistedReducer.mystore.blogdata)
     const [ pagename ,  inumber] = params
+    const select = useAppSelector(state => state.persistedReducer.themestore.themestate)
     const makelist =(pname:string):Steemitdata[]=>{
         let data:Steemitdata[] = []
         switch(pname){
@@ -29,6 +30,9 @@ const Getstorepage:React.FC<ownprops> = ({params})=>{
             break;
             case "next" :
               data =list.next
+            break;
+            case "review" :
+              data =list.review
             break;
         } 
         return data
@@ -64,14 +68,17 @@ const Getstorepage:React.FC<ownprops> = ({params})=>{
       
     })}
     
-            <a  onClick={()=> window.location.href= '/blog'
-            }
+            <a  onClick={()=> {
+              select==='vsc'? window.location.href='/vscblog'  :  window.location.href= '/blog'
+            }}
               className={detail.backbtn}
             > 
     뒤로가기
             </a>
             <a  onClick={()=> {
-              if(Number(inumber)+1 <datalist.length) {window.location.href= `/blog/${pagename}/${Number(inumber)+1}`}
+              if(Number(inumber)+1 <datalist.length) {
+                window.location.href= `/${select==='vsc'? "vscblog" : "blog"}/${pagename}/${Number(inumber)+1}`
+              }
               else{alert('다음페이지가 없습니다.')}
             }}
               className={detail.nextbtn}
