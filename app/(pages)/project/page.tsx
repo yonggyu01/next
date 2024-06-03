@@ -10,11 +10,11 @@ export default async function Project(){
       title : "VSCode theme blog",
       skill : ["react", 'typescript',"redux-toolkit", "scss", "react-persist","next.js"],
       contents : '블로그에 카테고리 기능을 추가하여 제작',
-      point : '반응형 웹페이지, 검색엔진최적화(SEO)를  위해 메타 태그 작성, 구글 서치 콘솔 / 네이버 웹마스터 등에 사이트맵과 RSS을 제출하여 페이지 색인 등록',
+      point : '반응형 웹페이지, 검색엔진최적화(SEO)를  위해 메타 태그 작성, 구글 서치 콘솔 / 네이버 웹마스터 등에 사이트맵 등록, robots.txt 등록',
       git : 'https://github.com/yonggyu01/next_myblog',
       visit : 'https://next-myblog-5rdu.vercel.app/',
       deploy : 'Vercel',
-      src : '/blog.jpg'
+      src : '/next-myblog-5rdu.vercel.app_vschome.png'
     },
     {
       title : "Project : Ari",
@@ -24,7 +24,7 @@ export default async function Project(){
       git : 'https://github.com/yonggyu01/react-ari',
       visit : 'http://ec2-13-209-26-80.ap-northeast-2.compute.amazonaws.com/',
       deploy : 'AWS EC2',
-      src : '/arifanpage.PNG'
+      src : '/ec2-13-209-26-80.ap-northeast-2.compute.amazonaws.com_ (1).png'
     },
     {
       title : "육아앱",
@@ -34,7 +34,7 @@ export default async function Project(){
       git : 'https://github.com/yonggyu01/mybabyari',
       visit : 'https://engproject-ba2f9.firebaseapp.com/',
       deploy : 'Firebase hosting' ,
-      src : '/vue.PNG'
+      src : '/engproject-ba2f9.firebaseapp.com_.png'
     },
     {
       title : "CGV",
@@ -44,7 +44,7 @@ export default async function Project(){
       git : 'https://github.com/yonggyu01/finalcgv',
       visit : 'https://yonggyu01.github.io/finalcgv/',
       deploy : 'Github pages' ,
-      src : '/cgv2.PNG'
+      src : '/yonggyu01.github.io_finalcgv_.png'
     },
     {
       title : "Windows 95 Theme site",
@@ -54,7 +54,7 @@ export default async function Project(){
       git : 'https://github.com/yonggyu01/windowProject',
       visit : 'https://mywindow95.netlify.app/',
       deploy : 'Netlify' ,
-      src : '/윈도1.PNG'
+      src : '/mywindow95.netlify.app_.png'
     },
   ]
   return (
