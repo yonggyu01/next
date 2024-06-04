@@ -1,6 +1,13 @@
 @import '../../style/mixin.scss';
 @import '../../style/main.module.scss';
 @import '../../style/media.scss';
+@mixin inputall{
+    background-color: transparent;
+    font-size: 1em;
+    padding-left: 5px;
+    color:var(--color-text);
+    outline: none;
+}
 .mainwrap { 
     height: calc(100vh - 63px);
     width: calc(100vw - 224px);
@@ -128,20 +135,25 @@
     @include flex(row){
      gap :5px;
     };
-    input{
-        background-color: transparent;
-        font-size: 1em;
-        padding-left: 5px;
-        color:var(--color-text);
-        outline: none;
+    .moidinput{
+        display: none;
+        @include inputall;
     }
-    #idinput{
-        width: calc(100vw - 224px)
+    .idinput{
+        width: calc(100vw - 224px);
+      @include inputall;
     }
-    #boardinput{
-        width: calc(100vw - 224px)
+    .webinput{
+        width: calc(100vw - 224px);
+        @include inputall;
     }
+    .mobinput{
+        display: none;
+        @include inputall;
+    }
+   
 }
+
 .ml{
     margin-left: 10px;
 }
@@ -155,6 +167,12 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+}
+.flexinput{
+    @include flex(row);
+    .sendbtn{
+        color :var(--color-text);
+    }
 }
 @include tablet{
     .countnum{
@@ -225,11 +243,22 @@
     
     }
     .inputwrap{
-        #idinput{
-            width: calc(100vw - 50px)
+        .moidinput{
+            // width: calc(100vw - 50px);
+            display: inline;
         }
-        #boardinput{
-            width: calc(100vw - 50px)
+        .idinput{
+            display:none;
+        }
+        .webinput{
+            display: none !important;
+            width: calc(100vw - 50px);
+        }
+        .mobinput{
+            display: inline;
+        }
+        .sendbtn{
+            text-transform: uppercase;
         }
     }
 }
