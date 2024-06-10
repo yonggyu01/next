@@ -206,6 +206,25 @@
         font-size: 1.2em;
     
     }
+    .inputwrap{
+        .moidinput{
+            // width: calc(100vw - 50px);
+            display: inline;
+        }
+        .idinput{
+            display:none;
+        }
+        .webinput{
+            display: none !important;
+            width: calc(100vw - 50px);
+        }
+        .mobinput{
+            display: inline;
+        }
+        .sendbtn{
+            text-transform: uppercase;
+        }
+    }
 }
 @include mobile{
     .mainwrap { 
@@ -242,23 +261,5 @@
         font-size: 1em;
     
     }
-    .inputwrap{
-        .moidinput{
-            // width: calc(100vw - 50px);
-            display: inline;
-        }
-        .idinput{
-            display:none;
-        }
-        .webinput{
-            display: none !important;
-            width: calc(100vw - 50px);
-        }
-        .mobinput{
-            display: inline;
-        }
-        .sendbtn{
-            text-transform: uppercase;
-        }
-    }
+  
 }

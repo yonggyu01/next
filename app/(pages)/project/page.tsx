@@ -22,7 +22,7 @@ export default async function Project(){
       contents : '리엑트를 활용하여 제작한 포트폴리오 모아보기 페이지입니다.',
       point : '장바구니와 회원가입등을 제어하기 위해 Admin페이지가 존재합니다.',
       git : 'https://github.com/yonggyu01/react-ari',
-      visit : 'http://ec2-13-209-26-80.ap-northeast-2.compute.amazonaws.com/',
+      visit : 'http://ec2-52-78-200-254.ap-northeast-2.compute.amazonaws.com/',
       deploy : 'AWS EC2',
       src : '/ec2-13-209-26-80.ap-northeast-2.compute.amazonaws.com_ (1).png'
     },
