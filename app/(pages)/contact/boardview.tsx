@@ -4,6 +4,10 @@ import board from './contact.module.scss'
 import Inp from './boardwrite'
 import {Ifetch,noticeboard} from '../../model'
 import axios, { AxiosResponse } from 'axios'
+import {fetchcontact} from './fetchgetdata'
+import {
+   useQuery,
+} from '@tanstack/react-query';
 const Boardview :React.FC = ()=>{
     const [list, setlist] = React.useState<noticeboard[]>([])
     const [render,setrender]= React.useState<Boolean>(false)
@@ -30,11 +34,14 @@ const Boardview :React.FC = ()=>{
         }
     }
 
-
+    const {data,isSuccess} = useQuery({
+        queryKey: ['contactdata'],
+        queryFn:fetchcontact
+    })
     React.useEffect(()=>{
         setrender(false)
-        getdata()
-    },[render])
+        // getdata()
+    },[render,isSuccess])
 
     return (
         <div className={board.teminal}>
@@ -50,7 +57,7 @@ const Boardview :React.FC = ()=>{
                 <span className={`${board.ltgt} ${board.ml}` }> Text : "방명록 내용" 입력하세요 </span>
                 </details>
                 {
-                 list && list.map(el=> <div className={board.blist}>
+                 data && data.map((el:noticeboard)=> <div className={board.blist} key={'contact'+el.create}>
                     <span className={`${board.text} ${board.eclip}`}>{el.userid}</span>
                     <span className={`${board.attrib} ${board.eclip}`}>{el.content}</span>
                     <span className={board.text}>{el.create?.replace(/(\d{1,2}월\d{1,2}일).*/, "$1")}</span>

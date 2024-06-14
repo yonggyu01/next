@@ -5,7 +5,31 @@ import about from './contact.module.scss'
 import Ter from './boardview'
 import profile from '@/app/components/mainpage/profile/profile.module.scss'
 import Clip from './clip'
-export default async function Vschome(){
+import {fetchcontact} from './fetchgetdata'
+import {
+  dehydrate,
+  HydrationBoundary,
+  QueryClient,
+  DehydratedState,
+  useQuery,
+} from '@tanstack/react-query';
+interface ownprops{
+    dehydratedState: DehydratedState;
+ 
+}
+async function getStaticProps() {
+  const queryClient = new QueryClient();
+  await queryClient.prefetchQuery({
+    queryKey: ['contactdata'],
+    queryFn: fetchcontact,
+  });
+  return {
+    props: {
+      dehydratedState: dehydrate(queryClient),
+    },
+  };
+}
+ const Vschome:React.FC<ownprops> =async ({dehydratedState})=>{
   const contactme ={
       email: "yonggyu01@naver.com",
       github: "https://github.com/yonggyu01",
@@ -56,9 +80,13 @@ export default async function Vschome(){
 <h2 className={about.stitle}>
      방명록 남기기
     </h2>
+    <HydrationBoundary state={dehydratedState}>
    <Ter></Ter>
+   </HydrationBoundary>
     </div>
 </div>
    
   );
 }
+
+export default Vschome

@@ -3,6 +3,15 @@ import React from 'react'
 import board from './contact.module.scss'
 import {Ifetch,noticeboard} from '../../model'
  import axios, { AxiosResponse } from 'axios'
+ import { fetchadd } from './fetchadd'
+ import {
+    dehydrate,
+    HydrationBoundary,
+    QueryClient,
+    DehydratedState,
+    useQuery,
+    useMutation
+  } from '@tanstack/react-query';
 interface ownporps{
 addboard(obj : noticeboard) :void
 }
@@ -14,7 +23,9 @@ const inputtext1= React.useRef<HTMLInputElement>(null)
 const [userid, setid] = React.useState<string>() 
 const [moid, setmoid] = React.useState<string>() 
 const [usertext, settext] = React.useState<string>() 
-
+const {mutate, data, isSuccess} = useMutation({
+    mutationFn : fetchadd,
+})
 
     return (
     <div className={board.inputwrap}>
@@ -53,7 +64,8 @@ const [usertext, settext] = React.useState<string>()
                 create : createdate,
                 userid 
             }
-            addboard(data)
+            // addboard(data)
+            mutate(data)
             target.value=''
             setid('')
            }
@@ -76,7 +88,8 @@ const [usertext, settext] = React.useState<string>()
              create : createdate,
              userid 
          }
-         addboard(data)
+         mutate(data)
+        //  addboard(data)
         }}> send </button>
         </div>}
     </div>

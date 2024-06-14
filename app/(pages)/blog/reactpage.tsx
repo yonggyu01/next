@@ -4,12 +4,16 @@ import {Steemitdata,SteemitResult, body} from "../../model"
 import reactblog from './blog.module.scss'
 import { useAppDispatch,useAppSelector } from '../../store/hook';
 import {Mystore} from "@/app/store/module/mystore";
+import { blogdata } from "./fetchblogdata";
+import {
+  useQuery,
+} from '@tanstack/react-query';
 interface Ownprops {
-    data : Steemitdata[]  
+    data1 : Steemitdata[]  
     title : string
     check : string
 }
-export const Reactpage :React.FC<Ownprops> = ({data,title,check}) => {
+export const Reactpage :React.FC<Ownprops> = ({data1,title,check}) => {
     const [render, setrender] = React.useState<boolean>(false)
     const dispatch = useAppDispatch()
     React.useEffect(()=>{
@@ -20,6 +24,34 @@ export const Reactpage :React.FC<Ownprops> = ({data,title,check}) => {
       }
 
     },[render])
+    const {data,isSuccess} = useQuery({
+      queryKey: ['blogdatalist'],
+      queryFn : blogdata,
+      select:(item:SteemitResult)=>{return item.result.filter((x:Steemitdata) =>{
+       let {tags} = JSON.parse(x.comment.json_metadata) 
+       if(title === 'review'){
+         for(let a of tags){
+           if(a === 'yongreact' || a === 'yongvue' || a === 'yongetc' ||   a=== 'yongnext' ){
+          return x  ;
+         }}
+        }else if(title === 'skill'){
+          for(let a of tags){
+            if(a === 'yongskill'){
+          return x  ;
+        }
+        }}else if(title === 'project'){
+          for(let a of tags){
+            if(a === 'yongreview'){
+          return x  ;
+        } }
+        }else if(title === 'cs'){
+          for(let a of tags){
+            if(a === 'yongcs'){
+          return x  ;
+        } }
+        }})      
+    }})
+    // console.log(data,'select 잘되는건지?')
     const imgsrc = /https.+[$jpg]/i
     const hangulno = /[^ ㄱ-ㅣ가-힣]/gm
     const movecontainer = React.useRef<HTMLDivElement>(null)
@@ -30,7 +62,7 @@ export const Reactpage :React.FC<Ownprops> = ({data,title,check}) => {
         --liindex.current 
       }else if(action === 'right' && liindex.current < moveli.current.length-3 && liindex.current >=0 ){++liindex.current}
       // console.log(liindex, 'idx',moveli.current[liindex])
-      console.log(moveli.current[0].getBoundingClientRect().width,'사이즈')
+      // console.log(moveli.current[0].getBoundingClientRect().width,'사이즈')
       moveli.current[liindex.current]?.scrollIntoView({
          behavior: "smooth", 
          block: "nearest", 
@@ -54,26 +86,25 @@ export const Reactpage :React.FC<Ownprops> = ({data,title,check}) => {
         movecontainer.current.style.transform=`translateX(${mwidth}px)`
       }
     }
-
     function pushdisp(txt:string) :void {
       switch(txt){
         case 'react' : 
-        dispatch(Mystore.actions.addreact(data))
+        dispatch(Mystore.actions.addreact(data1))
         return;
         case 'skill' :
-        dispatch(Mystore.actions.addskill(data))
+        dispatch(Mystore.actions.addskill(data1))
         return;
         case 'cs':
-        dispatch(Mystore.actions.addcs(data))
+        dispatch(Mystore.actions.addcs(data1))
         return;
         case 'next':
-        dispatch(Mystore.actions.addnext(data))
+        dispatch(Mystore.actions.addnext(data1))
         return;
         case 'vue' : 
-        dispatch(Mystore.actions.addvue(data))
+        dispatch(Mystore.actions.addvue(data1))
         return;
         case 'review' : 
-        dispatch(Mystore.actions.addreview(data))
+        dispatch(Mystore.actions.addreview(data1))
         return;
       }
     }  
@@ -103,7 +134,7 @@ export const Reactpage :React.FC<Ownprops> = ({data,title,check}) => {
                         }}} 
                         onClick={()=>{  
                           pushdisp(check)
-                   }} className={reactblog.reactwrapa} href={`/blog/${check}/${idx}`}>
+                   }} className={reactblog.reactwrapa} href={`/blog/${title}/${idx}`}>
                    <article className={reactblog.reactwraparticle}>
       <img
         alt={x.comment.title}
