@@ -11,25 +11,17 @@ import {
   DehydratedState,
   useQuery,
 } from '@tanstack/react-query';
-interface ownprops{
-    dehydratedState: DehydratedState;
- 
-}
-export async function getStaticProps() {
+async function preFetchdata() {
   const queryClient = new QueryClient();
 
   await queryClient.prefetchQuery({
     queryKey: ['blogdatalist'],
     queryFn: blogdata,
   });
-
-  return {
-    props: {
-      dehydratedState: dehydrate(queryClient),
-    },
-  };
+  return  dehydrate(queryClient)  
 }
-const Blog: React.FC<ownprops>= ({dehydratedState })=>{
+const Blog: React.FC=async ()=>{
+  const dehydratedState = await preFetchdata();
   // const data :SteemitResult | void = await blogdata().catch(err=>console.log('data 없음'))
   return (
     <div className={blog.mainwrap}>

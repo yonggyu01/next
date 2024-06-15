@@ -13,23 +13,16 @@ import {
   DehydratedState,
   useQuery,
 } from '@tanstack/react-query';
-interface ownprops{
-    dehydratedState: DehydratedState;
- 
-}
-async function getStaticProps() {
+async function getdatafetch() {
   const queryClient = new QueryClient();
   await queryClient.prefetchQuery({
     queryKey: ['contactdata'],
     queryFn: fetchcontact,
   });
-  return {
-    props: {
-      dehydratedState: dehydrate(queryClient),
-    },
-  };
+  return  dehydrate(queryClient)
 }
- const Vschome:React.FC<ownprops> = ({dehydratedState})=>{
+ const Vschome:React.FC =async ()=>{
+  const dehydratedState=getdatafetch()
   const contactme ={
       email: "yonggyu01@naver.com",
       github: "https://github.com/yonggyu01",
