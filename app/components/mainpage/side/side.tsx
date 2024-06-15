@@ -21,6 +21,7 @@ const Side :React.FC = ()=>{
         href: '/about'
         },
         {content : '테마가 변경됩니다.',
+
         title: 'toggle_on',
         toggle : true,
         action(value:boolean) {
@@ -63,14 +64,11 @@ const Side :React.FC = ()=>{
                 if(el.href){
                     dispatch(Themestore.actions.setselecticon(`${el.href.replace(/\//,'')}`))
                 }
-
-                
             }}>
                 <span className='material-symbols-outlined'>{el.title}</span>
             </a>
             <p className={side.popup}>{el.content}</p>
         </li>)}
-       
     </ul>
     </div>
     )
