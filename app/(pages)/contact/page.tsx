@@ -29,7 +29,7 @@ async function getStaticProps() {
     },
   };
 }
- const Vschome:React.FC<ownprops> =async ({dehydratedState})=>{
+ const Vschome:React.FC<ownprops> = ({dehydratedState})=>{
   const contactme ={
       email: "yonggyu01@naver.com",
       github: "https://github.com/yonggyu01",

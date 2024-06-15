@@ -29,8 +29,8 @@ export async function getStaticProps() {
     },
   };
 }
-const Blog: React.FC<ownprops>=async ({dehydratedState })=>{
-  const data :SteemitResult | void = await blogdata().catch(err=>console.log('data 없음'))
+const Blog: React.FC<ownprops>= ({dehydratedState })=>{
+  // const data :SteemitResult | void = await blogdata().catch(err=>console.log('data 없음'))
   return (
     <div className={blog.mainwrap}>
        <HydrationBoundary state={dehydratedState}>
