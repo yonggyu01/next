@@ -229,7 +229,7 @@
 @include mobile{
     .mainwrap { 
         width: calc(100vw - 50px);
-    }
+    }d
     .countnum{
         &::before{
         margin-right: 0.5rem;

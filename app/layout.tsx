@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { Inter } from "next/font/google";
 import React from 'react'
 import "./globals.css";
