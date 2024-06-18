@@ -8,6 +8,7 @@ import {Ifetch,noticeboard} from '../../model'
     dehydrate,
     HydrationBoundary,
     QueryClient,
+    useQueryClient,
     DehydratedState,
     useQuery,
     useMutation
@@ -23,8 +24,13 @@ const inputtext1= React.useRef<HTMLInputElement>(null)
 const [userid, setid] = React.useState<string>() 
 const [moid, setmoid] = React.useState<string>() 
 const [usertext, settext] = React.useState<string>() 
+
+const queryClient = useQueryClient()
 const {mutate, data, isSuccess} = useMutation({
     mutationFn : fetchadd,
+    onSuccess:()=>{
+        queryClient.invalidateQueries({queryKey:['contactdata']})
+    }
 })
 
     return (
