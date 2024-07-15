@@ -18,7 +18,6 @@ export const Bloglist :React.FC = () => {
   const mydata = useQuery({
     queryKey: ['blogdatalist'],
     queryFn : blogdata,
-    
   })
   const list  = useAppSelector(state => state.persistedReducer.mystore.blogdata)
   console.log(mydata , '리엑트 쿼리 잘 동작하나?',mydata.status)

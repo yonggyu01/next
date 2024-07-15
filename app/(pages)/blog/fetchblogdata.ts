@@ -10,7 +10,6 @@ export const blogdata = async ():Promise<SteemitResult> => {
      method: 'condenser_api.get_blog',
      params: ['yonggyu01', 0, 125],  
      id: '1',}),
-      next: { revalidate: 3600 } 
    })
    let result = await data.json()
    console.log('datafetching..  서버에서 재검증중')

@@ -30,7 +30,7 @@
             width: 360px;
            
         }
-        button{
+        a{
             border: 2px solid salmon;
             padding: 0.5em;
             &:hover{
@@ -59,7 +59,7 @@
 
            
         }
-        button{
+        a{
             border: 2px solid salmon;
             padding: 0.2em;
     
@@ -94,7 +94,7 @@
 
                
             }
-            button{
+            a{
                 &:not(:first-child){
                     display: none;
                 }

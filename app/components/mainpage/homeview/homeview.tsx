@@ -10,9 +10,9 @@ const Homeview :React.FC = ()=>{
             <h1>Hello Yonggyu's Blog</h1>
             <h2> I'm Frontend Developer</h2>
             <div className={home.btns}>
-                <button> Go Blog </button>
-                <button> View Work </button>
-                <button> Contact Me </button>
+                <a href='vscblog'> Go Blog </a>
+                <a href='project' > View Work </a>
+                <a href='contact'> Contact Me </a>
             </div>
         </div>
         </div>

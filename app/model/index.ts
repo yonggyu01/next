@@ -50,7 +50,33 @@ export type noticeboard ={
     create? : string,
     id?:string
 }
+
+type noticeboardOptional = {
+   readonly userid : string,
+   readonly content : string,
+   readonly create? : string,
+    id?:string
+}
+
 export type Ifetch = {
     msg : string,
     data: noticeboard
 }
+
+type myna = Ifetch['msg']
+
+type Options<T> = {
+    [P in keyof T]? : T[P]
+}
+
+type myFetch = Options<Ifetch>
+
+const yong:myFetch = {
+    msg : 'hi'
+} 
+
+type Typename<T> =  T extends string 
+? 'string' 
+: T extends number
+? 'number' 
+: 'number' ;
