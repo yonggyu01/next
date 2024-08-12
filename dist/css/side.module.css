@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
+.body[data-theme=light] {
+  --color-text: #232323;
+  --color-hovertextbefore: rgb(68, 68, 68);
+  --color-hovertextafter: black;
+  --color-background: #fff;
+  --color-mainbackground: rgb(235, 235, 235);
+  --color-btn: #FE016C;
+  --footer-bg: #29a2c7;
+  --tagname: #42c24f;
+  --atrri: #7445d8;
+  --atval: #468fee;
+}
+
+.body[data-theme=dark] {
+  --color-text: #fff;
+  --color-hovertextbefore: rgb(168, 168, 168);
+  --color-hovertextafter: rgb(255, 255, 255);
+  --color-mainbackground: #24292e;
+  --color-background: #232323;
+  --color-btn: #FFBD07;
+  --footer-bg: #424242;
+  --tagname: #9de6a4;
+  --atrri: #ae93ea;
+  --atval: #a3c6f4;
+}
+
+.wrap {
+  width: 50px;
+  padding-top: 10px;
+  background-color: var(--color-background);
+  border-right: 1px solid gray;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.flexbox {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.flexbox li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
+}
+.flexbox li:hover {
+  border-left: 2px solid red;
+  background-color: rgba(107, 107, 107, 0.349);
+}
+.flexbox li:hover span {
+  color: var(--color-hovertextafter);
+}
+.flexbox li span {
+  font-size: 30px;
+  color: var(--color-hovertextbefore);
+}
+
+.relative {
+  position: relative;
+}
+.relative:hover .popup {
+  display: block;
+  z-index: 3;
+}
+
+.relative:hover .popup {
+  display: block;
+  z-index: 3;
+}
+
+.popup {
+  display: none;
+  position: absolute;
+  left: 50px;
+  background-color: var(--color-text);
+  border: 1px solid gray;
+  color: var(--color-background);
+  font-size: 1em !important;
+  white-space: nowrap;
+  width: 150px;
+  padding-left: 5px;
+}/*# sourceMappingURL=side.module.css.map */

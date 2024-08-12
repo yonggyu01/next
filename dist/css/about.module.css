@@ -1,0 +1,139 @@
+.body[data-theme=light] {
+  --color-text: #232323;
+  --color-hovertextbefore: rgb(68, 68, 68);
+  --color-hovertextafter: black;
+  --color-background: #fff;
+  --color-mainbackground: rgb(235, 235, 235);
+  --color-btn: #FE016C;
+  --footer-bg: #29a2c7;
+  --tagname: #42c24f;
+  --atrri: #7445d8;
+  --atval: #468fee;
+}
+
+.body[data-theme=dark] {
+  --color-text: #fff;
+  --color-hovertextbefore: rgb(168, 168, 168);
+  --color-hovertextafter: rgb(255, 255, 255);
+  --color-mainbackground: #24292e;
+  --color-background: #232323;
+  --color-btn: #FFBD07;
+  --footer-bg: #424242;
+  --tagname: #9de6a4;
+  --atrri: #ae93ea;
+  --atval: #a3c6f4;
+}
+
+.mainwrap {
+  height: calc(100vh - 63px);
+  width: calc(100vw - 227px);
+  overflow-x: hidden;
+  background-color: var(--color-mainbackground);
+  padding: 2em;
+  box-sizing: border-box;
+  counter-reset: line;
+}
+
+.countnum {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.countnum::before {
+  color: grey;
+  text-align: center;
+  content: counter(line);
+  counter-increment: line;
+  margin-right: 1rem;
+  min-width: 26px;
+  font-size: 1.5em;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.ltgt {
+  color: gray;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.tagname {
+  color: var(--tagname);
+  font-size: 1.5em;
+}
+
+.attrib {
+  color: var(--atrri);
+  font-size: 1.5em;
+}
+
+.attval {
+  color: var(--atval);
+  font-size: 1.5em;
+}
+.attval:hover .mypic {
+  display: block;
+}
+.attval .mypic {
+  position: absolute;
+  display: none;
+  left: 350px;
+  top: -334px;
+  width: 200px !important;
+}
+
+.mleft {
+  margin-left: 2em;
+}
+
+.mleft1 {
+  margin-left: 4em;
+}
+
+.text {
+  color: var(--color-text);
+  font-weight: 200;
+  font-size: 1.2em;
+}
+
+@media (max-width: 430px) {
+  .mainwrap {
+    width: calc(100vw - 50px);
+    padding: 0.5em;
+  }
+  .ltgt {
+    font-weight: bold;
+    font-size: 1em;
+  }
+  .tagname {
+    font-size: 1em;
+  }
+  .attrib {
+    font-size: 1em;
+  }
+  .attval {
+    font-size: 1em;
+  }
+  .attval .mypic {
+    left: 200px;
+    top: -77px;
+    height: 80px !important;
+    width: 50px !important;
+  }
+  .mleft {
+    margin-left: 1em;
+  }
+  .mleft1 {
+    margin-left: 2em;
+  }
+  .text {
+    color: var(--color-text);
+    font-weight: 200;
+    font-size: 1em;
+  }
+}/*# sourceMappingURL=about.module.css.map */

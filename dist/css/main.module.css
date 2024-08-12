@@ -1,0 +1,25 @@
+.body[data-theme=light] {
+  --color-text: #232323;
+  --color-hovertextbefore: rgb(68, 68, 68);
+  --color-hovertextafter: black;
+  --color-background: #fff;
+  --color-mainbackground: rgb(235, 235, 235);
+  --color-btn: #FE016C;
+  --footer-bg: #29a2c7;
+  --tagname: #42c24f;
+  --atrri: #7445d8;
+  --atval: #468fee;
+}
+
+.body[data-theme=dark] {
+  --color-text: #fff;
+  --color-hovertextbefore: rgb(168, 168, 168);
+  --color-hovertextafter: rgb(255, 255, 255);
+  --color-mainbackground: #24292e;
+  --color-background: #232323;
+  --color-btn: #FFBD07;
+  --footer-bg: #424242;
+  --tagname: #9de6a4;
+  --atrri: #ae93ea;
+  --atval: #a3c6f4;
+}/*# sourceMappingURL=main.module.css.map */

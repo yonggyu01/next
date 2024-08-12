@@ -1,0 +1,9 @@
+.gridwrap {
+  display: grid;
+  grid-template-columns: 50px 175px 1fr;
+  height: calc(100vh - 61px);
+}
+
+.one {
+  width: 100%;
+}/*# sourceMappingURL=mainpage.module.css.map */

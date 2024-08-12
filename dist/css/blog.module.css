@@ -1,0 +1,184 @@
+@charset "UTF-8";
+.body[data-theme=light] {
+  --color-text: #232323;
+  --color-hovertextbefore: rgb(68, 68, 68);
+  --color-hovertextafter: black;
+  --color-background: #fff;
+  --color-mainbackground: rgb(235, 235, 235);
+  --color-btn: #FE016C;
+  --footer-bg: #29a2c7;
+  --tagname: #42c24f;
+  --atrri: #7445d8;
+  --atval: #468fee;
+}
+
+.body[data-theme=dark] {
+  --color-text: #fff;
+  --color-hovertextbefore: rgb(168, 168, 168);
+  --color-hovertextafter: rgb(255, 255, 255);
+  --color-mainbackground: #24292e;
+  --color-background: #232323;
+  --color-btn: #FFBD07;
+  --footer-bg: #424242;
+  --tagname: #9de6a4;
+  --atrri: #ae93ea;
+  --atval: #a3c6f4;
+}
+
+.dtitle {
+  font-size: 2em;
+  padding-top: 2em;
+  padding-left: 1em;
+  color: var(--color-text);
+}
+
+.retitle {
+  font-size: 2em;
+  display: none;
+  color: var(--color-text);
+}
+
+.reactflexbox {
+  white-space: nowrap;
+  display: flex;
+  gap: 24px;
+  flex-wrap: nowrap;
+  scroll-snap-type: x mandatory;
+  overflow-x: hidden;
+  width: clamp(40%, 1100px, 90%);
+  transition: all 1s;
+  margin-bottom: 35px;
+}
+
+.reactwrap {
+  overflow-y: auto;
+  background-color: var(--color-mainbackground);
+}
+
+.reactwraparticle {
+  width: 350px;
+  border: 1px solid var(--color-text);
+  transition: all 1s;
+  padding: 3px;
+}
+
+.leftmargin {
+  box-sizing: border-box;
+  overflow-x: auto;
+  padding-left: 2em;
+  width: 100%;
+  position: relative;
+}
+
+.listbtn {
+  z-index: 2;
+  position: relative;
+  width: clamp(40%, 1090px, 90%);
+  top: 180px;
+  font-size: 4em;
+  font-weight: 100;
+  font-family: monospace;
+}
+.listbtn .listbtnLeft {
+  left: 10px;
+  position: absolute;
+  width: 1em;
+  height: 1em;
+  display: flex;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.781);
+  cursor: pointer;
+}
+.listbtn .listbtnRight {
+  position: absolute;
+  right: 15px;
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.781);
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.reactblogimg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 250px;
+}
+
+.reacttitle {
+  font-size: 1.2em;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--color-text);
+}
+
+.timeline {
+  font-size: 0.9em;
+  color: gray;
+}
+
+.reactcontents {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.9em;
+  padding-right: 5px;
+  color: var(--color-text);
+  box-sizing: border-box;
+  /* 여러 줄 자르기 추가 스타일 */
+  white-space: normal;
+  line-height: 1.2;
+  height: 3.6em;
+  text-align: left;
+  word-wrap: break-word;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.reactwrapa {
+  transition: all 1s;
+  scroll-snap-align: start;
+}
+.reactwrapa:hover {
+  transform: translateY(-5px);
+}
+
+@media (max-width: 650px) {
+  .reactflexbox {
+    margin-bottom: 35px;
+    gap: 20px;
+  }
+  .reactwraparticle {
+    width: 250px;
+  }
+  .reactblogimg {
+    height: 180px;
+  }
+}
+@media (max-width: 430px) {
+  .reactflexbox {
+    margin-bottom: 35px;
+    gap: 20px;
+    overflow: auto;
+  }
+  .reactwraparticle {
+    width: 200px;
+  }
+  .reactblogimg {
+    height: 150px;
+  }
+}/*# sourceMappingURL=blog.module.css.map */
