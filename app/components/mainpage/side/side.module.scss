@@ -2,7 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
 @import '../../../style/main.module.scss';
 
-
 .wrap{
     width: 50px;
     padding-top: 10px;
@@ -14,7 +13,6 @@
 }
 .flexbox{
     // width: 100%;
-
 
 @include flex(column){
     gap: 5px;

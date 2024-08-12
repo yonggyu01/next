@@ -9,7 +9,6 @@ interface Ownprops{
     openside : boolean,
     setopenside: React.Dispatch<React.SetStateAction<boolean>>
 }
-
 export const Sidebar:React.FC<Ownprops> =({openside,setopenside})=>{
     const dispatch = useAppDispatch()
     return (
@@ -22,11 +21,9 @@ export const Sidebar:React.FC<Ownprops> =({openside,setopenside})=>{
                         e.preventDefault()
                         setopenside(!openside)
                         dispatch(Themestore.actions.changetheme('vsc'))
-
                     }
                 }}
                 >{item.label}</Link> ) }
-
             </div>
             <div className={sbar.right}></div>
             <button className={sbar.xbtn} onClick={()=>{
