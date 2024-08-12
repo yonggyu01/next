@@ -8,7 +8,7 @@ export const blogdata = async ():Promise<SteemitResult> => {
    body: JSON.stringify({
      jsonrpc: '2.0',
      method: 'condenser_api.get_blog',
-     params: ['yonggyu01', 0, 125],  
+     params: ['yonggyu01', 0, 350],  
      id: '1',}),
    })
    let result = await data.json()
